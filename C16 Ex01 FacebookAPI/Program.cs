@@ -16,6 +16,7 @@ namespace C16_Ex01_FacebookAPI
         {
             //LIOR TEST COMMIT
             //LIOR BRANCH TEST
+            // Lior VS test
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Form1());
