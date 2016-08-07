@@ -14,6 +14,7 @@ namespace C16_Ex01_FacebookAPI
         [STAThread]
         static void Main()
         {
+            //LIOR TEST COMMIT
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Form1());
