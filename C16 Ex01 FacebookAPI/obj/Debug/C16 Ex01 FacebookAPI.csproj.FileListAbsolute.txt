@@ -1,2 +1,12 @@
 c:\users\komoona\documents\visual studio 2015\Projects\C16 Ex01 Lior 302820667 Eran 200839710\C16 Ex01 FacebookAPI\bin\Debug\C16 Ex01 FacebookAPI.exe.config
 C:\Users\komoona\Documents\visual studio 2015\Projects\C16 Ex01 LiorNaar 302820667 EranKeren 200839710\C16 Ex01 FacebookAPI\bin\Debug\C16 Ex01 FacebookAPI.exe.config
+C:\Users\komoona\Documents\Visual Studio 2015\Projects\C16 Ex01 LiorNaar 302820667 EranKeren 200839710\C16 Ex01 FacebookAPI\bin\Debug\C16 Ex01 FacebookAPI.exe
+C:\Users\komoona\Documents\Visual Studio 2015\Projects\C16 Ex01 LiorNaar 302820667 EranKeren 200839710\C16 Ex01 FacebookAPI\bin\Debug\C16 Ex01 FacebookAPI.pdb
+C:\Users\komoona\Documents\Visual Studio 2015\Projects\C16 Ex01 LiorNaar 302820667 EranKeren 200839710\C16 Ex01 FacebookAPI\bin\Debug\Facebook.dll
+C:\Users\komoona\Documents\Visual Studio 2015\Projects\C16 Ex01 LiorNaar 302820667 EranKeren 200839710\C16 Ex01 FacebookAPI\bin\Debug\FbGraphApiWrapper.dll
+C:\Users\komoona\Documents\Visual Studio 2015\Projects\C16 Ex01 LiorNaar 302820667 EranKeren 200839710\C16 Ex01 FacebookAPI\obj\Debug\C16 Ex01 FacebookAPI.csprojResolveAssemblyReference.cache
+C:\Users\komoona\Documents\Visual Studio 2015\Projects\C16 Ex01 LiorNaar 302820667 EranKeren 200839710\C16 Ex01 FacebookAPI\obj\Debug\C16_Ex01_FacebookAPI.Form1.resources
+C:\Users\komoona\Documents\Visual Studio 2015\Projects\C16 Ex01 LiorNaar 302820667 EranKeren 200839710\C16 Ex01 FacebookAPI\obj\Debug\C16_Ex01_FacebookAPI.Properties.Resources.resources
+C:\Users\komoona\Documents\Visual Studio 2015\Projects\C16 Ex01 LiorNaar 302820667 EranKeren 200839710\C16 Ex01 FacebookAPI\obj\Debug\C16 Ex01 FacebookAPI.csproj.GenerateResource.Cache
+C:\Users\komoona\Documents\Visual Studio 2015\Projects\C16 Ex01 LiorNaar 302820667 EranKeren 200839710\C16 Ex01 FacebookAPI\obj\Debug\C16 Ex01 FacebookAPI.exe
+C:\Users\komoona\Documents\Visual Studio 2015\Projects\C16 Ex01 LiorNaar 302820667 EranKeren 200839710\C16 Ex01 FacebookAPI\obj\Debug\C16 Ex01 FacebookAPI.pdb
