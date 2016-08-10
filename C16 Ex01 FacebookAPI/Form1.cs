@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using FacebookWrapper;
+using FacebookWrapper.ObjectModel;
 
 namespace C16_Ex01_FacebookAPI
 {
@@ -25,10 +26,12 @@ namespace C16_Ex01_FacebookAPI
 
         private void button1_Click(object sender, EventArgs e)
         {
-            LoginResult result = FacebookWrapper.FacebookService.Login("2287434634730573", 
-                "public_profile", "user_friends", "email", "user_posts", "user_videos", "user_events", "read_stream");
-            coverPicture.LoadAsync(result.LoggedInUser.Cover.SourceURL);
-            coverPicture.SizeMode = PictureBoxSizeMode.StretchImage;
+            //LoginResult result = FacebookWrapper.FacebookService.Login("2287434634730573", 
+            //    "public_profile", "user_friends", "email", "user_posts", "user_videos", "user_events", "publish_actions");
+            //result.LoggedInUser.PostLink("youtube.com/watch?v=tM7oUtMt6WU");
+            //coverPicture.LoadAsync(result.LoggedInUser.Cover.SourceURL);
+            //coverPicture.SizeMode = PictureBoxSizeMode.StretchImage;
+
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
