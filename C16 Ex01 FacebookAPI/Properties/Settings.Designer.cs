@@ -22,5 +22,15 @@ namespace C16_Ex01_FacebookAPI.Properties {
                 return defaultInstance;
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
+        [global::System.Configuration.DefaultSettingValueAttribute("http://lyrics.wikia.com/server.php")]
+        public string C16_Ex01_FacebookAPI_com_wikia_lyrics_LyricWiki {
+            get {
+                return ((string)(this["C16_Ex01_FacebookAPI_com_wikia_lyrics_LyricWiki"]));
+            }
+        }
     }
 }

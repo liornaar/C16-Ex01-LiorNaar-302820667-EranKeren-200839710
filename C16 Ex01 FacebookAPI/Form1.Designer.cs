@@ -54,6 +54,18 @@
             this.eventLog1 = new System.Diagnostics.EventLog();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.listBox1 = new System.Windows.Forms.ListBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.Artist = new System.Windows.Forms.TextBox();
+            this.songName = new System.Windows.Forms.TextBox();
+            this.songURL = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.songPostButton = new System.Windows.Forms.Button();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.mutualFriendPictureBox = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.coverPicture)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.profilePicture)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.eventPicture1)).BeginInit();
@@ -63,6 +75,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.eventPicture5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.eventLog1)).BeginInit();
             this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
+            this.groupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.mutualFriendPictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // loginButton
@@ -295,11 +310,125 @@
             this.listBox1.TabIndex = 27;
             this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.songPostButton);
+            this.groupBox2.Controls.Add(this.label8);
+            this.groupBox2.Controls.Add(this.label7);
+            this.groupBox2.Controls.Add(this.label6);
+            this.groupBox2.Controls.Add(this.songURL);
+            this.groupBox2.Controls.Add(this.songName);
+            this.groupBox2.Controls.Add(this.Artist);
+            this.groupBox2.Location = new System.Drawing.Point(626, 209);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(238, 310);
+            this.groupBox2.TabIndex = 27;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Post Song + Lyrics!";
+            // 
+            // Artist
+            // 
+            this.Artist.Location = new System.Drawing.Point(39, 66);
+            this.Artist.Name = "Artist";
+            this.Artist.Size = new System.Drawing.Size(181, 22);
+            this.Artist.TabIndex = 0;
+            // 
+            // songName
+            // 
+            this.songName.Location = new System.Drawing.Point(39, 121);
+            this.songName.Name = "songName";
+            this.songName.Size = new System.Drawing.Size(181, 22);
+            this.songName.TabIndex = 1;
+            // 
+            // songURL
+            // 
+            this.songURL.Location = new System.Drawing.Point(39, 180);
+            this.songURL.Name = "songURL";
+            this.songURL.Size = new System.Drawing.Size(181, 22);
+            this.songURL.TabIndex = 2;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(39, 43);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(81, 17);
+            this.label6.TabIndex = 3;
+            this.label6.Text = "Artist Name";
+            this.label6.Click += new System.EventHandler(this.label6_Click);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(39, 101);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(72, 17);
+            this.label7.TabIndex = 4;
+            this.label7.Text = "Song Title";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(39, 160);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(36, 17);
+            this.label8.TabIndex = 5;
+            this.label8.Text = "URL";
+            // 
+            // songPostButton
+            // 
+            this.songPostButton.Location = new System.Drawing.Point(44, 232);
+            this.songPostButton.Name = "songPostButton";
+            this.songPostButton.Size = new System.Drawing.Size(171, 40);
+            this.songPostButton.TabIndex = 28;
+            this.songPostButton.Text = "Post!";
+            this.songPostButton.UseVisualStyleBackColor = true;
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.mutualFriendPictureBox);
+            this.groupBox3.Controls.Add(this.button1);
+            this.groupBox3.Controls.Add(this.label9);
+            this.groupBox3.Location = new System.Drawing.Point(294, 254);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(304, 237);
+            this.groupBox3.TabIndex = 28;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Mutual Friend";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(17, 24);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(276, 17);
+            this.label9.TabIndex = 0;
+            this.label9.Text = "Who is my friend with most mutual friends?";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(90, 187);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(114, 37);
+            this.button1.TabIndex = 1;
+            this.button1.Text = "Tell me!";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // mutualFriendPictureBox
+            // 
+            this.mutualFriendPictureBox.Location = new System.Drawing.Point(81, 55);
+            this.mutualFriendPictureBox.Name = "mutualFriendPictureBox";
+            this.mutualFriendPictureBox.Size = new System.Drawing.Size(133, 126);
+            this.mutualFriendPictureBox.TabIndex = 29;
+            this.mutualFriendPictureBox.TabStop = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(876, 698);
+            this.Controls.Add(this.groupBox3);
+            this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.eventLocation5);
@@ -336,6 +465,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.eventPicture5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.eventLog1)).EndInit();
             this.groupBox1.ResumeLayout(false);
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.mutualFriendPictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -369,6 +503,18 @@
         private System.Diagnostics.EventLog eventLog1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox songURL;
+        private System.Windows.Forms.TextBox songName;
+        private System.Windows.Forms.TextBox Artist;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.PictureBox mutualFriendPictureBox;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Button songPostButton;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label7;
     }
 }
 
