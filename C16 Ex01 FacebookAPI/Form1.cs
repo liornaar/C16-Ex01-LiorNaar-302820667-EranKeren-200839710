@@ -96,6 +96,7 @@ namespace C16_Ex01_FacebookAPI
         {
             loadPictures();
             loadEvents();
+            loadPosts();
         }
 
         private void loadPictures()
@@ -131,9 +132,46 @@ namespace C16_Ex01_FacebookAPI
            
         }
 
+        private void loadPosts()
+        {
+            
+            listBox1.Items.Clear();
+            listBox1.DisplayMember = "Description";
+            foreach (Post post in m_LoggedInUser.Posts)
+            {
+                if (post.Message != null)
+                {
+                    listBox1.Items.Add(post.Message);
+                }
+                else if (post.Caption != null)
+                {
+                    listBox1.Items.Add(post.Caption);
+                }
+                else
+                {
+                    listBox1.Items.Add(string.Format("[{0}]", post.Type));
+                }
+            }
+        }
+
         private void eventPicture1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void postButton_Click(object sender, EventArgs e)
+        {
+            m_LoggedInUser.PostStatus(textBox1.Text);
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            //int maxNumOfFriends = 0;
+            //User friendWithMostFriends;
+            //foreach (User friend in m_LoggedInUser.Friends)
+            //{
+            //    if (friend.)
+            //}
         }
     }
 }

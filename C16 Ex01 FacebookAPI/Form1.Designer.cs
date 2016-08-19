@@ -133,6 +133,7 @@
             this.postButton.TabIndex = 6;
             this.postButton.Text = "Post!";
             this.postButton.UseVisualStyleBackColor = true;
+            this.postButton.Click += new System.EventHandler(this.postButton_Click);
             // 
             // label5
             // 
@@ -285,6 +286,7 @@
             this.button1.TabIndex = 1;
             this.button1.Text = "Tell me!";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label9
             // 
