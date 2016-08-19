@@ -1,6 +1,9 @@
-﻿namespace C16_Ex01_FacebookAPI
+﻿using System.Collections.Generic;
+using System.Windows.Forms;
+
+namespace C16_Ex01_FacebookAPI
 {
-    partial class Form1
+    partial class FacebookForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,8 +31,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.buttonLogin = new System.Windows.Forms.Button();
-            this.coverPicture = new System.Windows.Forms.PictureBox();
+            this.m_ButtonLogin = new System.Windows.Forms.Button();
+            this.m_CoverPicture = new System.Windows.Forms.PictureBox();
             this.profilePicture = new System.Windows.Forms.PictureBox();
             this.rememberMeCheckBox = new System.Windows.Forms.CheckBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -44,15 +47,15 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.songURL = new System.Windows.Forms.TextBox();
-            this.songName = new System.Windows.Forms.TextBox();
-            this.Artist = new System.Windows.Forms.TextBox();
+            this.m_SongUrl = new System.Windows.Forms.TextBox();
+            this.m_SongNameTextBox = new System.Windows.Forms.TextBox();
+            this.m_ArtistTextBox = new System.Windows.Forms.TextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.mutualFriendPictureBox = new System.Windows.Forms.PictureBox();
             this.button1 = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            ((System.ComponentModel.ISupportInitialize)(this.coverPicture)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.m_CoverPicture)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.profilePicture)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.eventLog1)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -61,75 +64,70 @@
             ((System.ComponentModel.ISupportInitialize)(this.mutualFriendPictureBox)).BeginInit();
             this.SuspendLayout();
             // 
-            // buttonLogin
+            // m_ButtonLogin
             // 
-            this.buttonLogin.Location = new System.Drawing.Point(279, 37);
-            this.buttonLogin.Margin = new System.Windows.Forms.Padding(2);
-            this.buttonLogin.Name = "buttonLogin";
-            this.buttonLogin.Size = new System.Drawing.Size(128, 32);
-            this.buttonLogin.TabIndex = 0;
-            this.buttonLogin.Text = "Login";
-            this.buttonLogin.UseVisualStyleBackColor = true;
-            this.buttonLogin.Click += new System.EventHandler(this.buttonLogin_Click);
+            this.m_ButtonLogin.Location = new System.Drawing.Point(372, 46);
+            this.m_ButtonLogin.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.m_ButtonLogin.Name = "m_ButtonLogin";
+            this.m_ButtonLogin.Size = new System.Drawing.Size(171, 39);
+            this.m_ButtonLogin.TabIndex = 0;
+            this.m_ButtonLogin.Text = "Login";
+            this.m_ButtonLogin.UseVisualStyleBackColor = true;
+            this.m_ButtonLogin.Click += new System.EventHandler(this.buttonLogin_Click);
             // 
-            // coverPicture
+            // m_CoverPicture
             // 
-            this.coverPicture.Location = new System.Drawing.Point(0, 1);
-            this.coverPicture.Margin = new System.Windows.Forms.Padding(2);
-            this.coverPicture.Name = "coverPicture";
-            this.coverPicture.Size = new System.Drawing.Size(658, 154);
-            this.coverPicture.TabIndex = 1;
-            this.coverPicture.TabStop = false;
-            this.coverPicture.Click += new System.EventHandler(this.pictureBox1_Click);
+            this.m_CoverPicture.Location = new System.Drawing.Point(0, 1);
+            this.m_CoverPicture.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.m_CoverPicture.Name = "m_CoverPicture";
+            this.m_CoverPicture.Size = new System.Drawing.Size(877, 190);
+            this.m_CoverPicture.TabIndex = 1;
+            this.m_CoverPicture.TabStop = false;
             // 
             // profilePicture
             // 
-            this.profilePicture.Location = new System.Drawing.Point(22, 99);
-            this.profilePicture.Margin = new System.Windows.Forms.Padding(2);
+            this.profilePicture.Location = new System.Drawing.Point(29, 122);
+            this.profilePicture.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.profilePicture.Name = "profilePicture";
-            this.profilePicture.Size = new System.Drawing.Size(100, 102);
+            this.profilePicture.Size = new System.Drawing.Size(133, 126);
             this.profilePicture.TabIndex = 2;
             this.profilePicture.TabStop = false;
-            this.profilePicture.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
             // rememberMeCheckBox
             // 
             this.rememberMeCheckBox.AutoSize = true;
-            this.rememberMeCheckBox.Location = new System.Drawing.Point(279, 75);
-            this.rememberMeCheckBox.Margin = new System.Windows.Forms.Padding(2);
+            this.rememberMeCheckBox.Location = new System.Drawing.Point(372, 92);
+            this.rememberMeCheckBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.rememberMeCheckBox.Name = "rememberMeCheckBox";
-            this.rememberMeCheckBox.Size = new System.Drawing.Size(94, 17);
+            this.rememberMeCheckBox.Size = new System.Drawing.Size(122, 21);
             this.rememberMeCheckBox.TabIndex = 3;
             this.rememberMeCheckBox.Text = "Remember me";
             this.rememberMeCheckBox.UseVisualStyleBackColor = true;
-            this.rememberMeCheckBox.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(197, 167);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.textBox1.Location = new System.Drawing.Point(263, 206);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(192, 20);
+            this.textBox1.Size = new System.Drawing.Size(255, 22);
             this.textBox1.TabIndex = 4;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // postLabel
             // 
             this.postLabel.AutoSize = true;
-            this.postLabel.Location = new System.Drawing.Point(159, 170);
-            this.postLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.postLabel.Location = new System.Drawing.Point(212, 209);
             this.postLabel.Name = "postLabel";
-            this.postLabel.Size = new System.Drawing.Size(37, 13);
+            this.postLabel.Size = new System.Drawing.Size(48, 17);
             this.postLabel.TabIndex = 5;
             this.postLabel.Text = "Status";
-            this.postLabel.Click += new System.EventHandler(this.label1_Click);
             // 
             // postButton
             // 
-            this.postButton.Location = new System.Drawing.Point(392, 167);
-            this.postButton.Margin = new System.Windows.Forms.Padding(2);
+            this.postButton.Enabled = false;
+            this.postButton.Location = new System.Drawing.Point(523, 206);
+            this.postButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.postButton.Name = "postButton";
-            this.postButton.Size = new System.Drawing.Size(56, 24);
+            this.postButton.Size = new System.Drawing.Size(75, 30);
             this.postButton.TabIndex = 6;
             this.postButton.Text = "Post!";
             this.postButton.UseVisualStyleBackColor = true;
@@ -138,10 +136,9 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(292, 410);
-            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label5.Location = new System.Drawing.Point(389, 505);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(91, 13);
+            this.label5.Size = new System.Drawing.Size(118, 17);
             this.label5.TabIndex = 25;
             this.label5.Text = "Upcoming Events";
             // 
@@ -152,11 +149,11 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.listBox1);
-            this.groupBox1.Location = new System.Drawing.Point(9, 206);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.groupBox1.Location = new System.Drawing.Point(12, 254);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox1.Size = new System.Drawing.Size(186, 218);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBox1.Size = new System.Drawing.Size(248, 268);
             this.groupBox1.TabIndex = 26;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Posts";
@@ -164,12 +161,12 @@
             // listBox1
             // 
             this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(2, 17);
-            this.listBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.listBox1.ItemHeight = 16;
+            this.listBox1.Location = new System.Drawing.Point(3, 21);
+            this.listBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(180, 199);
+            this.listBox1.Size = new System.Drawing.Size(239, 244);
             this.listBox1.TabIndex = 27;
-            this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             // 
             // groupBox2
             // 
@@ -177,112 +174,112 @@
             this.groupBox2.Controls.Add(this.label8);
             this.groupBox2.Controls.Add(this.label7);
             this.groupBox2.Controls.Add(this.label6);
-            this.groupBox2.Controls.Add(this.songURL);
-            this.groupBox2.Controls.Add(this.songName);
-            this.groupBox2.Controls.Add(this.Artist);
-            this.groupBox2.Location = new System.Drawing.Point(470, 170);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(2);
+            this.groupBox2.Controls.Add(this.m_SongUrl);
+            this.groupBox2.Controls.Add(this.m_SongNameTextBox);
+            this.groupBox2.Controls.Add(this.m_ArtistTextBox);
+            this.groupBox2.Location = new System.Drawing.Point(627, 209);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox2.Size = new System.Drawing.Size(178, 252);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBox2.Size = new System.Drawing.Size(237, 310);
             this.groupBox2.TabIndex = 27;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Post Song + Lyrics!";
             // 
             // songPostButton
             // 
-            this.songPostButton.Location = new System.Drawing.Point(33, 188);
-            this.songPostButton.Margin = new System.Windows.Forms.Padding(2);
+            this.songPostButton.Enabled = false;
+            this.songPostButton.Location = new System.Drawing.Point(44, 231);
+            this.songPostButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.songPostButton.Name = "songPostButton";
-            this.songPostButton.Size = new System.Drawing.Size(128, 32);
+            this.songPostButton.Size = new System.Drawing.Size(171, 39);
             this.songPostButton.TabIndex = 28;
             this.songPostButton.Text = "Post!";
             this.songPostButton.UseVisualStyleBackColor = true;
+            this.songPostButton.Click += new System.EventHandler(this.songPostButton_Click);
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(29, 130);
-            this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label8.Location = new System.Drawing.Point(39, 160);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(29, 13);
+            this.label8.Size = new System.Drawing.Size(36, 17);
             this.label8.TabIndex = 5;
             this.label8.Text = "URL";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(29, 82);
-            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label7.Location = new System.Drawing.Point(39, 101);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(55, 13);
+            this.label7.Size = new System.Drawing.Size(72, 17);
             this.label7.TabIndex = 4;
             this.label7.Text = "Song Title";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(29, 35);
-            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label6.Location = new System.Drawing.Point(39, 43);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(61, 13);
+            this.label6.Size = new System.Drawing.Size(81, 17);
             this.label6.TabIndex = 3;
             this.label6.Text = "Artist Name";
-            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
-            // songURL
+            // m_SongUrl
             // 
-            this.songURL.Location = new System.Drawing.Point(29, 146);
-            this.songURL.Margin = new System.Windows.Forms.Padding(2);
-            this.songURL.Name = "songURL";
-            this.songURL.Size = new System.Drawing.Size(137, 20);
-            this.songURL.TabIndex = 2;
+            this.m_SongUrl.Location = new System.Drawing.Point(39, 180);
+            this.m_SongUrl.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.m_SongUrl.Name = "m_SongUrl";
+            this.m_SongUrl.Size = new System.Drawing.Size(181, 22);
+            this.m_SongUrl.TabIndex = 2;
             // 
-            // songName
+            // m_SongNameTextBox
             // 
-            this.songName.Location = new System.Drawing.Point(29, 98);
-            this.songName.Margin = new System.Windows.Forms.Padding(2);
-            this.songName.Name = "songName";
-            this.songName.Size = new System.Drawing.Size(137, 20);
-            this.songName.TabIndex = 1;
+            this.m_SongNameTextBox.Location = new System.Drawing.Point(39, 121);
+            this.m_SongNameTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.m_SongNameTextBox.Name = "m_SongNameTextBox";
+            this.m_SongNameTextBox.Size = new System.Drawing.Size(181, 22);
+            this.m_SongNameTextBox.TabIndex = 1;
+            this.m_SongNameTextBox.TextChanged += new System.EventHandler(this.songName_TextChanged);
             // 
-            // Artist
+            // m_ArtistTextBox
             // 
-            this.Artist.Location = new System.Drawing.Point(29, 54);
-            this.Artist.Margin = new System.Windows.Forms.Padding(2);
-            this.Artist.Name = "Artist";
-            this.Artist.Size = new System.Drawing.Size(137, 20);
-            this.Artist.TabIndex = 0;
+            this.m_ArtistTextBox.Location = new System.Drawing.Point(39, 66);
+            this.m_ArtistTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.m_ArtistTextBox.Name = "m_ArtistTextBox";
+            this.m_ArtistTextBox.Size = new System.Drawing.Size(181, 22);
+            this.m_ArtistTextBox.TabIndex = 0;
             // 
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.mutualFriendPictureBox);
             this.groupBox3.Controls.Add(this.button1);
             this.groupBox3.Controls.Add(this.label9);
-            this.groupBox3.Location = new System.Drawing.Point(220, 206);
-            this.groupBox3.Margin = new System.Windows.Forms.Padding(2);
+            this.groupBox3.Location = new System.Drawing.Point(293, 254);
+            this.groupBox3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox3.Size = new System.Drawing.Size(228, 193);
+            this.groupBox3.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBox3.Size = new System.Drawing.Size(304, 238);
             this.groupBox3.TabIndex = 28;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Mutual Friend";
             // 
             // mutualFriendPictureBox
             // 
-            this.mutualFriendPictureBox.Location = new System.Drawing.Point(61, 45);
-            this.mutualFriendPictureBox.Margin = new System.Windows.Forms.Padding(2);
+            this.mutualFriendPictureBox.Location = new System.Drawing.Point(81, 55);
+            this.mutualFriendPictureBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.mutualFriendPictureBox.Name = "mutualFriendPictureBox";
-            this.mutualFriendPictureBox.Size = new System.Drawing.Size(100, 102);
+            this.mutualFriendPictureBox.Size = new System.Drawing.Size(133, 126);
             this.mutualFriendPictureBox.TabIndex = 29;
             this.mutualFriendPictureBox.TabStop = false;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(68, 152);
-            this.button1.Margin = new System.Windows.Forms.Padding(2);
+            this.button1.Enabled = false;
+            this.button1.Location = new System.Drawing.Point(91, 187);
+            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(86, 30);
+            this.button1.Size = new System.Drawing.Size(115, 37);
             this.button1.TabIndex = 1;
             this.button1.Text = "Tell me!";
             this.button1.UseVisualStyleBackColor = true;
@@ -291,26 +288,26 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(13, 20);
-            this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label9.Location = new System.Drawing.Point(17, 25);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(206, 13);
+            this.label9.Size = new System.Drawing.Size(276, 17);
             this.label9.TabIndex = 0;
             this.label9.Text = "Who is my friend with most mutual friends?";
             // 
             // flowLayoutPanel1
             // 
             this.flowLayoutPanel1.AutoScroll = true;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(9, 443);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(12, 545);
+            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(4);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(636, 142);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(848, 175);
             this.flowLayoutPanel1.TabIndex = 29;
             // 
-            // Form1
+            // FacebookForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(657, 587);
+            this.ClientSize = new System.Drawing.Size(876, 722);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
@@ -321,13 +318,12 @@
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.rememberMeCheckBox);
             this.Controls.Add(this.profilePicture);
-            this.Controls.Add(this.buttonLogin);
-            this.Controls.Add(this.coverPicture);
-            this.Margin = new System.Windows.Forms.Padding(2);
-            this.Name = "Form1";
+            this.Controls.Add(this.m_ButtonLogin);
+            this.Controls.Add(this.m_CoverPicture);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Name = "FacebookForm";
             this.Text = "dw";
-            this.Load += new System.EventHandler(this.Form1_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.coverPicture)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.m_CoverPicture)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.profilePicture)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.eventLog1)).EndInit();
             this.groupBox1.ResumeLayout(false);
@@ -342,9 +338,8 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Button buttonLogin;
-        private System.Windows.Forms.PictureBox coverPicture;
+        private System.Windows.Forms.Button m_ButtonLogin;
+        private System.Windows.Forms.PictureBox m_CoverPicture;
         private System.Windows.Forms.PictureBox profilePicture;
         private System.Windows.Forms.CheckBox rememberMeCheckBox;
         private System.Windows.Forms.TextBox textBox1;
@@ -356,9 +351,8 @@
         private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox songURL;
-        private System.Windows.Forms.TextBox songName;
-        private System.Windows.Forms.TextBox Artist;
+        private System.Windows.Forms.TextBox m_SongUrl;
+        private System.Windows.Forms.TextBox m_ArtistTextBox;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.PictureBox mutualFriendPictureBox;
         private System.Windows.Forms.Button button1;
@@ -367,6 +361,8 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private List<Button> m_ButtonsList;
+        private TextBox m_SongNameTextBox;
     }
 }
 

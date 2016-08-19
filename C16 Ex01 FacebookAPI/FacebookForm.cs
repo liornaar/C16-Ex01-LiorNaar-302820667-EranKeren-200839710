@@ -12,85 +12,47 @@ using FacebookWrapper.ObjectModel;
 
 namespace C16_Ex01_FacebookAPI
 {
-    public partial class Form1 : Form
+    public partial class FacebookForm : Form
     {
+        private FacebookApiHandler m_FacebookApiHandler;
         private User m_LoggedInUser;
 
-        public Form1()
+        public FacebookForm()
         {
             InitializeComponent();
             Color myColor = Color.FromArgb(120, Color.White);
             rememberMeCheckBox.BackColor = myColor;
-            rememberMeCheckBox.Parent = coverPicture;
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void checkBox1_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void flowLayoutPanel3_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void label1_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label6_Click(object sender, EventArgs e)
-        {
-
+            rememberMeCheckBox.Parent = m_CoverPicture;
+            m_ButtonsList = new List<Button> { postButton, button1, songPostButton };
         }
 
         private void buttonLogin_Click(object sender, EventArgs e)
         {
-            // removed , "publish_actions" authorize and 
-            // result.LoggedInUser.PostLink("youtube.com/watch?v=tM7oUtMt6WU");
-            LoginResult result = FacebookWrapper.FacebookService.Login("2287434634730573",
-                "public_profile", "user_friends", "email", "user_posts", "user_videos", "user_events");
-            if (string.IsNullOrEmpty(result.AccessToken))
+            m_FacebookApiHandler = new FacebookApiHandler();
+            m_FacebookApiHandler.UserLogin();
+            if (string.IsNullOrEmpty(m_FacebookApiHandler.m_AccessToken))
             {
-                MessageBox.Show(result.ErrorMessage);
+                MessageBox.Show("Could not connect to Facebook");
             }
             else
             {
-                m_LoggedInUser = result.LoggedInUser;
-                fetchData();
+               fetchData();
             }
-            
+
+            enableButtons();
+            m_ButtonLogin.Hide();
+            rememberMeCheckBox.Hide();
+
         }
+
+        private void enableButtons()
+        {
+            foreach (Button button in m_ButtonsList)
+            {
+                button.Enabled = true;
+            }
+        }
+
 
         private void fetchData()
         {
@@ -101,9 +63,9 @@ namespace C16_Ex01_FacebookAPI
 
         private void loadPictures()
         {
-            coverPicture.LoadAsync(m_LoggedInUser.Cover.SourceURL);
-            coverPicture.SizeMode = PictureBoxSizeMode.StretchImage;
-            profilePicture.LoadAsync(m_LoggedInUser.PictureNormalURL);
+            m_CoverPicture.LoadAsync(m_FacebookApiHandler.m_User.Cover.SourceURL);
+            m_CoverPicture.SizeMode = PictureBoxSizeMode.StretchImage;
+            profilePicture.LoadAsync(m_FacebookApiHandler.m_User.PictureNormalURL);
             profilePicture.SizeMode = PictureBoxSizeMode.StretchImage;
         }
 
@@ -113,7 +75,7 @@ namespace C16_Ex01_FacebookAPI
             //listBox1.Items.Clear();
             //listBox1.DisplayMember = "Name";
             flowLayoutPanel1.Controls.Clear();
-            foreach (Event fbEvent in m_LoggedInUser.Events)
+            foreach (Event fbEvent in m_FacebookApiHandler.m_User.Events)
             {
                 EventControl control = new EventControl();
                 control.PictureUrl = fbEvent.PictureNormalURL;
@@ -129,15 +91,15 @@ namespace C16_Ex01_FacebookAPI
                 EventControls.AddLast(control);
                 flowLayoutPanel1.Controls.Add(control);
             }
-           
+
         }
 
         private void loadPosts()
         {
-            
+
             listBox1.Items.Clear();
             listBox1.DisplayMember = "Description";
-            foreach (Post post in m_LoggedInUser.Posts)
+            foreach (Post post in m_FacebookApiHandler.m_User.Posts)
             {
                 if (post.Message != null)
                 {
@@ -153,6 +115,7 @@ namespace C16_Ex01_FacebookAPI
                 }
             }
         }
+
 
         private void eventPicture1_Click(object sender, EventArgs e)
         {
@@ -172,6 +135,22 @@ namespace C16_Ex01_FacebookAPI
             //{
             //    if (friend.)
             //}
+        }
+
+        private void songPostButton_Click(object sender, EventArgs e)
+        {
+            //TODO: check if songURL is a valid url, and 
+            //TODO: check if textboxes contains something or disable until input 
+            string result = m_FacebookApiHandler.GetSongLyrics(m_SongNameTextBox.Text, m_ArtistTextBox.Text);
+            if (!string.IsNullOrEmpty(result))
+            {
+               m_FacebookApiHandler.m_User.PostStatus(i_StatusText: string.Format("{0} - {1}\n {2}", m_ArtistTextBox.Text, m_SongNameTextBox.Text, result), i_Link: m_SongUrl.Text);
+            }
+        }
+
+        private void songName_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
