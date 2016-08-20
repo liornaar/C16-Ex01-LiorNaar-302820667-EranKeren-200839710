@@ -33,35 +33,37 @@ namespace C16_Ex01_FacebookAPI
         {
             this.m_ButtonLogin = new System.Windows.Forms.Button();
             this.m_CoverPicture = new System.Windows.Forms.PictureBox();
-            this.profilePicture = new System.Windows.Forms.PictureBox();
-            this.rememberMeCheckBox = new System.Windows.Forms.CheckBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.postLabel = new System.Windows.Forms.Label();
-            this.postButton = new System.Windows.Forms.Button();
-            this.label5 = new System.Windows.Forms.Label();
-            this.eventLog1 = new System.Diagnostics.EventLog();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.listBox1 = new System.Windows.Forms.ListBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.songPostButton = new System.Windows.Forms.Button();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
+            this.m_ProfilePicture = new System.Windows.Forms.PictureBox();
+            this.m_RememberMeCheckBox = new System.Windows.Forms.CheckBox();
+            this.m_PostTextBox = new System.Windows.Forms.TextBox();
+            this.m_PostLabel = new System.Windows.Forms.Label();
+            this.m_PostButton = new System.Windows.Forms.Button();
+            this.m_EventsLabel = new System.Windows.Forms.Label();
+            this.m_EventLog = new System.Diagnostics.EventLog();
+            this.m_PostsGroupBox = new System.Windows.Forms.GroupBox();
+            this.m_PostsListBox = new System.Windows.Forms.ListBox();
+            this.m_LyricsGroupBox = new System.Windows.Forms.GroupBox();
+            this.m_SongPostButton = new System.Windows.Forms.Button();
+            this.m_SongUrlLabel = new System.Windows.Forms.Label();
+            this.m_SongTitleLabel = new System.Windows.Forms.Label();
+            this.m_ArtistLabel = new System.Windows.Forms.Label();
             this.m_SongUrl = new System.Windows.Forms.TextBox();
             this.m_SongNameTextBox = new System.Windows.Forms.TextBox();
             this.m_ArtistTextBox = new System.Windows.Forms.TextBox();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.mutualFriendPictureBox = new System.Windows.Forms.PictureBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.label9 = new System.Windows.Forms.Label();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.m_PictureStatGroupBox = new System.Windows.Forms.GroupBox();
+            this.m_MostCommentedPictureLabel = new System.Windows.Forms.Label();
+            this.m_MostLikedPictureLabel = new System.Windows.Forms.Label();
+            this.m_MostCommentedPictureBox = new System.Windows.Forms.PictureBox();
+            this.m_MostLikedPictureBox = new System.Windows.Forms.PictureBox();
+            this.m_EventsLayout = new System.Windows.Forms.FlowLayoutPanel();
             ((System.ComponentModel.ISupportInitialize)(this.m_CoverPicture)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.profilePicture)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.eventLog1)).BeginInit();
-            this.groupBox1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
-            this.groupBox3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.mutualFriendPictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.m_ProfilePicture)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.m_EventLog)).BeginInit();
+            this.m_PostsGroupBox.SuspendLayout();
+            this.m_LyricsGroupBox.SuspendLayout();
+            this.m_PictureStatGroupBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.m_MostCommentedPictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.m_MostLikedPictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // m_ButtonLogin
@@ -84,146 +86,146 @@ namespace C16_Ex01_FacebookAPI
             this.m_CoverPicture.TabIndex = 1;
             this.m_CoverPicture.TabStop = false;
             // 
-            // profilePicture
+            // m_ProfilePicture
             // 
-            this.profilePicture.Location = new System.Drawing.Point(29, 122);
-            this.profilePicture.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.profilePicture.Name = "profilePicture";
-            this.profilePicture.Size = new System.Drawing.Size(133, 126);
-            this.profilePicture.TabIndex = 2;
-            this.profilePicture.TabStop = false;
+            this.m_ProfilePicture.Location = new System.Drawing.Point(29, 122);
+            this.m_ProfilePicture.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.m_ProfilePicture.Name = "m_ProfilePicture";
+            this.m_ProfilePicture.Size = new System.Drawing.Size(133, 126);
+            this.m_ProfilePicture.TabIndex = 2;
+            this.m_ProfilePicture.TabStop = false;
             // 
-            // rememberMeCheckBox
+            // m_RememberMeCheckBox
             // 
-            this.rememberMeCheckBox.AutoSize = true;
-            this.rememberMeCheckBox.Location = new System.Drawing.Point(372, 92);
-            this.rememberMeCheckBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.rememberMeCheckBox.Name = "rememberMeCheckBox";
-            this.rememberMeCheckBox.Size = new System.Drawing.Size(122, 21);
-            this.rememberMeCheckBox.TabIndex = 3;
-            this.rememberMeCheckBox.Text = "Remember me";
-            this.rememberMeCheckBox.UseVisualStyleBackColor = true;
+            this.m_RememberMeCheckBox.AutoSize = true;
+            this.m_RememberMeCheckBox.Location = new System.Drawing.Point(372, 92);
+            this.m_RememberMeCheckBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.m_RememberMeCheckBox.Name = "m_RememberMeCheckBox";
+            this.m_RememberMeCheckBox.Size = new System.Drawing.Size(122, 21);
+            this.m_RememberMeCheckBox.TabIndex = 3;
+            this.m_RememberMeCheckBox.Text = "Remember me";
+            this.m_RememberMeCheckBox.UseVisualStyleBackColor = true;
             // 
-            // textBox1
+            // m_PostTextBox
             // 
-            this.textBox1.Location = new System.Drawing.Point(263, 206);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(255, 22);
-            this.textBox1.TabIndex = 4;
+            this.m_PostTextBox.Location = new System.Drawing.Point(263, 206);
+            this.m_PostTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.m_PostTextBox.Name = "m_PostTextBox";
+            this.m_PostTextBox.Size = new System.Drawing.Size(255, 22);
+            this.m_PostTextBox.TabIndex = 4;
             // 
-            // postLabel
+            // m_PostLabel
             // 
-            this.postLabel.AutoSize = true;
-            this.postLabel.Location = new System.Drawing.Point(212, 209);
-            this.postLabel.Name = "postLabel";
-            this.postLabel.Size = new System.Drawing.Size(48, 17);
-            this.postLabel.TabIndex = 5;
-            this.postLabel.Text = "Status";
+            this.m_PostLabel.AutoSize = true;
+            this.m_PostLabel.Location = new System.Drawing.Point(212, 209);
+            this.m_PostLabel.Name = "m_PostLabel";
+            this.m_PostLabel.Size = new System.Drawing.Size(48, 17);
+            this.m_PostLabel.TabIndex = 5;
+            this.m_PostLabel.Text = "Status";
             // 
-            // postButton
+            // m_PostButton
             // 
-            this.postButton.Enabled = false;
-            this.postButton.Location = new System.Drawing.Point(523, 206);
-            this.postButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.postButton.Name = "postButton";
-            this.postButton.Size = new System.Drawing.Size(75, 30);
-            this.postButton.TabIndex = 6;
-            this.postButton.Text = "Post!";
-            this.postButton.UseVisualStyleBackColor = true;
-            this.postButton.Click += new System.EventHandler(this.postButton_Click);
+            this.m_PostButton.Enabled = false;
+            this.m_PostButton.Location = new System.Drawing.Point(523, 206);
+            this.m_PostButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.m_PostButton.Name = "m_PostButton";
+            this.m_PostButton.Size = new System.Drawing.Size(75, 30);
+            this.m_PostButton.TabIndex = 6;
+            this.m_PostButton.Text = "Post!";
+            this.m_PostButton.UseVisualStyleBackColor = true;
+            this.m_PostButton.Click += new System.EventHandler(this.postButton_Click);
             // 
-            // label5
+            // m_EventsLabel
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(389, 505);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(118, 17);
-            this.label5.TabIndex = 25;
-            this.label5.Text = "Upcoming Events";
+            this.m_EventsLabel.AutoSize = true;
+            this.m_EventsLabel.Location = new System.Drawing.Point(389, 505);
+            this.m_EventsLabel.Name = "m_EventsLabel";
+            this.m_EventsLabel.Size = new System.Drawing.Size(118, 17);
+            this.m_EventsLabel.TabIndex = 25;
+            this.m_EventsLabel.Text = "Upcoming Events";
             // 
-            // eventLog1
+            // m_EventLog
             // 
-            this.eventLog1.SynchronizingObject = this;
+            this.m_EventLog.SynchronizingObject = this;
             // 
-            // groupBox1
+            // m_PostsGroupBox
             // 
-            this.groupBox1.Controls.Add(this.listBox1);
-            this.groupBox1.Location = new System.Drawing.Point(12, 254);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox1.Size = new System.Drawing.Size(248, 268);
-            this.groupBox1.TabIndex = 26;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Posts";
+            this.m_PostsGroupBox.Controls.Add(this.m_PostsListBox);
+            this.m_PostsGroupBox.Location = new System.Drawing.Point(12, 254);
+            this.m_PostsGroupBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.m_PostsGroupBox.Name = "m_PostsGroupBox";
+            this.m_PostsGroupBox.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.m_PostsGroupBox.Size = new System.Drawing.Size(230, 268);
+            this.m_PostsGroupBox.TabIndex = 26;
+            this.m_PostsGroupBox.TabStop = false;
+            this.m_PostsGroupBox.Text = "Posts";
             // 
-            // listBox1
+            // m_PostsListBox
             // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 16;
-            this.listBox1.Location = new System.Drawing.Point(3, 21);
-            this.listBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(239, 244);
-            this.listBox1.TabIndex = 27;
+            this.m_PostsListBox.FormattingEnabled = true;
+            this.m_PostsListBox.ItemHeight = 16;
+            this.m_PostsListBox.Location = new System.Drawing.Point(3, 21);
+            this.m_PostsListBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.m_PostsListBox.Name = "m_PostsListBox";
+            this.m_PostsListBox.Size = new System.Drawing.Size(221, 244);
+            this.m_PostsListBox.TabIndex = 27;
             // 
-            // groupBox2
+            // m_LyricsGroupBox
             // 
-            this.groupBox2.Controls.Add(this.songPostButton);
-            this.groupBox2.Controls.Add(this.label8);
-            this.groupBox2.Controls.Add(this.label7);
-            this.groupBox2.Controls.Add(this.label6);
-            this.groupBox2.Controls.Add(this.m_SongUrl);
-            this.groupBox2.Controls.Add(this.m_SongNameTextBox);
-            this.groupBox2.Controls.Add(this.m_ArtistTextBox);
-            this.groupBox2.Location = new System.Drawing.Point(627, 209);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox2.Size = new System.Drawing.Size(237, 310);
-            this.groupBox2.TabIndex = 27;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Post Song + Lyrics!";
+            this.m_LyricsGroupBox.Controls.Add(this.m_SongPostButton);
+            this.m_LyricsGroupBox.Controls.Add(this.m_SongUrlLabel);
+            this.m_LyricsGroupBox.Controls.Add(this.m_SongTitleLabel);
+            this.m_LyricsGroupBox.Controls.Add(this.m_ArtistLabel);
+            this.m_LyricsGroupBox.Controls.Add(this.m_SongUrl);
+            this.m_LyricsGroupBox.Controls.Add(this.m_SongNameTextBox);
+            this.m_LyricsGroupBox.Controls.Add(this.m_ArtistTextBox);
+            this.m_LyricsGroupBox.Location = new System.Drawing.Point(627, 209);
+            this.m_LyricsGroupBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.m_LyricsGroupBox.Name = "m_LyricsGroupBox";
+            this.m_LyricsGroupBox.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.m_LyricsGroupBox.Size = new System.Drawing.Size(237, 310);
+            this.m_LyricsGroupBox.TabIndex = 27;
+            this.m_LyricsGroupBox.TabStop = false;
+            this.m_LyricsGroupBox.Text = "Post Song + Lyrics!";
             // 
-            // songPostButton
+            // m_SongPostButton
             // 
-            this.songPostButton.Enabled = false;
-            this.songPostButton.Location = new System.Drawing.Point(44, 231);
-            this.songPostButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.songPostButton.Name = "songPostButton";
-            this.songPostButton.Size = new System.Drawing.Size(171, 39);
-            this.songPostButton.TabIndex = 28;
-            this.songPostButton.Text = "Post!";
-            this.songPostButton.UseVisualStyleBackColor = true;
-            this.songPostButton.Click += new System.EventHandler(this.songPostButton_Click);
+            this.m_SongPostButton.Enabled = false;
+            this.m_SongPostButton.Location = new System.Drawing.Point(44, 231);
+            this.m_SongPostButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.m_SongPostButton.Name = "m_SongPostButton";
+            this.m_SongPostButton.Size = new System.Drawing.Size(171, 39);
+            this.m_SongPostButton.TabIndex = 28;
+            this.m_SongPostButton.Text = "Post!";
+            this.m_SongPostButton.UseVisualStyleBackColor = true;
+            this.m_SongPostButton.Click += new System.EventHandler(this.songPostButton_Click);
             // 
-            // label8
+            // m_SongUrlLabel
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(39, 160);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(36, 17);
-            this.label8.TabIndex = 5;
-            this.label8.Text = "URL";
+            this.m_SongUrlLabel.AutoSize = true;
+            this.m_SongUrlLabel.Location = new System.Drawing.Point(39, 160);
+            this.m_SongUrlLabel.Name = "m_SongUrlLabel";
+            this.m_SongUrlLabel.Size = new System.Drawing.Size(36, 17);
+            this.m_SongUrlLabel.TabIndex = 5;
+            this.m_SongUrlLabel.Text = "URL";
             // 
-            // label7
+            // m_SongTitleLabel
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(39, 101);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(72, 17);
-            this.label7.TabIndex = 4;
-            this.label7.Text = "Song Title";
+            this.m_SongTitleLabel.AutoSize = true;
+            this.m_SongTitleLabel.Location = new System.Drawing.Point(39, 101);
+            this.m_SongTitleLabel.Name = "m_SongTitleLabel";
+            this.m_SongTitleLabel.Size = new System.Drawing.Size(72, 17);
+            this.m_SongTitleLabel.TabIndex = 4;
+            this.m_SongTitleLabel.Text = "Song Title";
             // 
-            // label6
+            // m_ArtistLabel
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(39, 43);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(81, 17);
-            this.label6.TabIndex = 3;
-            this.label6.Text = "Artist Name";
+            this.m_ArtistLabel.AutoSize = true;
+            this.m_ArtistLabel.Location = new System.Drawing.Point(39, 43);
+            this.m_ArtistLabel.Name = "m_ArtistLabel";
+            this.m_ArtistLabel.Size = new System.Drawing.Size(81, 17);
+            this.m_ArtistLabel.TabIndex = 3;
+            this.m_ArtistLabel.Text = "Artist Name";
             // 
             // m_SongUrl
             // 
@@ -250,88 +252,98 @@ namespace C16_Ex01_FacebookAPI
             this.m_ArtistTextBox.Size = new System.Drawing.Size(181, 22);
             this.m_ArtistTextBox.TabIndex = 0;
             // 
-            // groupBox3
+            // m_PictureStatGroupBox
             // 
-            this.groupBox3.Controls.Add(this.mutualFriendPictureBox);
-            this.groupBox3.Controls.Add(this.button1);
-            this.groupBox3.Controls.Add(this.label9);
-            this.groupBox3.Location = new System.Drawing.Point(293, 254);
-            this.groupBox3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox3.Size = new System.Drawing.Size(304, 238);
-            this.groupBox3.TabIndex = 28;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Mutual Friend";
+            this.m_PictureStatGroupBox.Controls.Add(this.m_MostCommentedPictureLabel);
+            this.m_PictureStatGroupBox.Controls.Add(this.m_MostLikedPictureLabel);
+            this.m_PictureStatGroupBox.Controls.Add(this.m_MostCommentedPictureBox);
+            this.m_PictureStatGroupBox.Controls.Add(this.m_MostLikedPictureBox);
+            this.m_PictureStatGroupBox.Location = new System.Drawing.Point(248, 254);
+            this.m_PictureStatGroupBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.m_PictureStatGroupBox.Name = "m_PictureStatGroupBox";
+            this.m_PictureStatGroupBox.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.m_PictureStatGroupBox.Size = new System.Drawing.Size(373, 238);
+            this.m_PictureStatGroupBox.TabIndex = 28;
+            this.m_PictureStatGroupBox.TabStop = false;
+            this.m_PictureStatGroupBox.Text = "Picture Statistics";
             // 
-            // mutualFriendPictureBox
+            // m_MostCommentedPictureLabel
             // 
-            this.mutualFriendPictureBox.Location = new System.Drawing.Point(81, 55);
-            this.mutualFriendPictureBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.mutualFriendPictureBox.Name = "mutualFriendPictureBox";
-            this.mutualFriendPictureBox.Size = new System.Drawing.Size(133, 126);
-            this.mutualFriendPictureBox.TabIndex = 29;
-            this.mutualFriendPictureBox.TabStop = false;
+            this.m_MostCommentedPictureLabel.AutoSize = true;
+            this.m_MostCommentedPictureLabel.Location = new System.Drawing.Point(213, 208);
+            this.m_MostCommentedPictureLabel.Name = "m_MostCommentedPictureLabel";
+            this.m_MostCommentedPictureLabel.Size = new System.Drawing.Size(117, 17);
+            this.m_MostCommentedPictureLabel.TabIndex = 33;
+            this.m_MostCommentedPictureLabel.Text = "Most Commented";
             // 
-            // button1
+            // m_MostLikedPictureLabel
             // 
-            this.button1.Enabled = false;
-            this.button1.Location = new System.Drawing.Point(91, 187);
-            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(115, 37);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Tell me!";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.m_MostLikedPictureLabel.AutoSize = true;
+            this.m_MostLikedPictureLabel.Location = new System.Drawing.Point(51, 210);
+            this.m_MostLikedPictureLabel.Name = "m_MostLikedPictureLabel";
+            this.m_MostLikedPictureLabel.Size = new System.Drawing.Size(76, 17);
+            this.m_MostLikedPictureLabel.TabIndex = 32;
+            this.m_MostLikedPictureLabel.Text = "Most Liked";
             // 
-            // label9
+            // m_MostCommentedPictureBox
             // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(17, 25);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(276, 17);
-            this.label9.TabIndex = 0;
-            this.label9.Text = "Who is my friend with most mutual friends?";
+            this.m_MostCommentedPictureBox.Location = new System.Drawing.Point(192, 56);
+            this.m_MostCommentedPictureBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.m_MostCommentedPictureBox.Name = "m_MostCommentedPictureBox";
+            this.m_MostCommentedPictureBox.Size = new System.Drawing.Size(149, 139);
+            this.m_MostCommentedPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.m_MostCommentedPictureBox.TabIndex = 30;
+            this.m_MostCommentedPictureBox.TabStop = false;
             // 
-            // flowLayoutPanel1
+            // m_MostLikedPictureBox
             // 
-            this.flowLayoutPanel1.AutoScroll = true;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(12, 545);
-            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(4);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(848, 175);
-            this.flowLayoutPanel1.TabIndex = 29;
+            this.m_MostLikedPictureBox.Location = new System.Drawing.Point(15, 55);
+            this.m_MostLikedPictureBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.m_MostLikedPictureBox.Name = "m_MostLikedPictureBox";
+            this.m_MostLikedPictureBox.Size = new System.Drawing.Size(155, 138);
+            this.m_MostLikedPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.m_MostLikedPictureBox.TabIndex = 29;
+            this.m_MostLikedPictureBox.TabStop = false;
+            // 
+            // m_EventsLayout
+            // 
+            this.m_EventsLayout.AutoScroll = true;
+            this.m_EventsLayout.Location = new System.Drawing.Point(12, 545);
+            this.m_EventsLayout.Margin = new System.Windows.Forms.Padding(4);
+            this.m_EventsLayout.Name = "m_EventsLayout";
+            this.m_EventsLayout.Size = new System.Drawing.Size(848, 175);
+            this.m_EventsLayout.TabIndex = 29;
             // 
             // FacebookForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(876, 722);
-            this.Controls.Add(this.flowLayoutPanel1);
-            this.Controls.Add(this.groupBox3);
-            this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.postButton);
-            this.Controls.Add(this.postLabel);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.rememberMeCheckBox);
-            this.Controls.Add(this.profilePicture);
+            this.Controls.Add(this.m_EventsLayout);
+            this.Controls.Add(this.m_PictureStatGroupBox);
+            this.Controls.Add(this.m_LyricsGroupBox);
+            this.Controls.Add(this.m_PostsGroupBox);
+            this.Controls.Add(this.m_EventsLabel);
+            this.Controls.Add(this.m_PostButton);
+            this.Controls.Add(this.m_PostLabel);
+            this.Controls.Add(this.m_PostTextBox);
+            this.Controls.Add(this.m_RememberMeCheckBox);
+            this.Controls.Add(this.m_ProfilePicture);
             this.Controls.Add(this.m_ButtonLogin);
             this.Controls.Add(this.m_CoverPicture);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FacebookForm";
             this.Text = "dw";
             ((System.ComponentModel.ISupportInitialize)(this.m_CoverPicture)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.profilePicture)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.eventLog1)).EndInit();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.mutualFriendPictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.m_ProfilePicture)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.m_EventLog)).EndInit();
+            this.m_PostsGroupBox.ResumeLayout(false);
+            this.m_LyricsGroupBox.ResumeLayout(false);
+            this.m_LyricsGroupBox.PerformLayout();
+            this.m_PictureStatGroupBox.ResumeLayout(false);
+            this.m_PictureStatGroupBox.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.m_MostCommentedPictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.m_MostLikedPictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -340,29 +352,30 @@ namespace C16_Ex01_FacebookAPI
         #endregion
         private System.Windows.Forms.Button m_ButtonLogin;
         private System.Windows.Forms.PictureBox m_CoverPicture;
-        private System.Windows.Forms.PictureBox profilePicture;
-        private System.Windows.Forms.CheckBox rememberMeCheckBox;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label postLabel;
-        private System.Windows.Forms.Button postButton;
-        private System.Windows.Forms.Label label5;
-        private System.Diagnostics.EventLog eventLog1;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.ListBox listBox1;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.PictureBox m_ProfilePicture;
+        private System.Windows.Forms.CheckBox m_RememberMeCheckBox;
+        private System.Windows.Forms.TextBox m_PostTextBox;
+        private System.Windows.Forms.Label m_PostLabel;
+        private System.Windows.Forms.Button m_PostButton;
+        private System.Windows.Forms.Label m_EventsLabel;
+        private System.Diagnostics.EventLog m_EventLog;
+        private System.Windows.Forms.GroupBox m_PostsGroupBox;
+        private System.Windows.Forms.ListBox m_PostsListBox;
+        private System.Windows.Forms.GroupBox m_LyricsGroupBox;
+        private System.Windows.Forms.Label m_ArtistLabel;
         private System.Windows.Forms.TextBox m_SongUrl;
         private System.Windows.Forms.TextBox m_ArtistTextBox;
-        private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.PictureBox mutualFriendPictureBox;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Button songPostButton;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.GroupBox m_PictureStatGroupBox;
+        private System.Windows.Forms.PictureBox m_MostLikedPictureBox;
+        private System.Windows.Forms.Button m_SongPostButton;
+        private System.Windows.Forms.Label m_SongUrlLabel;
+        private System.Windows.Forms.Label m_SongTitleLabel;
+        private System.Windows.Forms.FlowLayoutPanel m_EventsLayout;
         private List<Button> m_ButtonsList;
         private TextBox m_SongNameTextBox;
+        private Label m_MostCommentedPictureLabel;
+        private Label m_MostLikedPictureLabel;
+        private PictureBox m_MostCommentedPictureBox;
     }
 }
 
