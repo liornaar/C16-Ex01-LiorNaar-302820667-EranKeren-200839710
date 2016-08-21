@@ -3,7 +3,7 @@ using System.Windows.Forms;
 
 namespace C16_Ex01_FacebookAPI
 {
-    partial class FacebookForm
+    public partial class FacebookForm
     {
         /// <summary>
         /// Required designer variable.
@@ -20,6 +20,7 @@ namespace C16_Ex01_FacebookAPI
             {
                 components.Dispose();
             }
+
             base.Dispose(disposing);
         }
 
@@ -56,6 +57,7 @@ namespace C16_Ex01_FacebookAPI
             this.m_MostCommentedPictureBox = new System.Windows.Forms.PictureBox();
             this.m_MostLikedPictureBox = new System.Windows.Forms.PictureBox();
             this.m_EventsLayout = new System.Windows.Forms.FlowLayoutPanel();
+            this.m_LyricsErrorLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.m_CoverPicture)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_ProfilePicture)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_EventLog)).BeginInit();
@@ -172,6 +174,7 @@ namespace C16_Ex01_FacebookAPI
             // 
             // m_LyricsGroupBox
             // 
+            this.m_LyricsGroupBox.Controls.Add(this.m_LyricsErrorLabel);
             this.m_LyricsGroupBox.Controls.Add(this.m_SongPostButton);
             this.m_LyricsGroupBox.Controls.Add(this.m_SongUrlLabel);
             this.m_LyricsGroupBox.Controls.Add(this.m_SongTitleLabel);
@@ -242,7 +245,6 @@ namespace C16_Ex01_FacebookAPI
             this.m_SongNameTextBox.Name = "m_SongNameTextBox";
             this.m_SongNameTextBox.Size = new System.Drawing.Size(181, 22);
             this.m_SongNameTextBox.TabIndex = 1;
-            this.m_SongNameTextBox.TextChanged += new System.EventHandler(this.songName_TextChanged);
             // 
             // m_ArtistTextBox
             // 
@@ -314,6 +316,17 @@ namespace C16_Ex01_FacebookAPI
             this.m_EventsLayout.Size = new System.Drawing.Size(848, 175);
             this.m_EventsLayout.TabIndex = 29;
             // 
+            // m_LyricsErrorLabel
+            // 
+            this.m_LyricsErrorLabel.AutoSize = true;
+            this.m_LyricsErrorLabel.ForeColor = System.Drawing.Color.Red;
+            this.m_LyricsErrorLabel.Location = new System.Drawing.Point(44, 281);
+            this.m_LyricsErrorLabel.Name = "m_LyricsErrorLabel";
+            this.m_LyricsErrorLabel.Size = new System.Drawing.Size(171, 17);
+            this.m_LyricsErrorLabel.TabIndex = 29;
+            this.m_LyricsErrorLabel.Text = "Error: Could not find lyrics";
+            this.m_LyricsErrorLabel.Visible = false;
+            // 
             // FacebookForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -376,6 +389,6 @@ namespace C16_Ex01_FacebookAPI
         private Label m_MostCommentedPictureLabel;
         private Label m_MostLikedPictureLabel;
         private PictureBox m_MostCommentedPictureBox;
+        private Label m_LyricsErrorLabel;
     }
 }
-

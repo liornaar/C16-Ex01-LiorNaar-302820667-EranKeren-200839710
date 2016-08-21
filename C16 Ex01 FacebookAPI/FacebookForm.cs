@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using FacebookWrapper;
@@ -15,7 +16,6 @@ namespace C16_Ex01_FacebookAPI
     public partial class FacebookForm : Form
     {
         private FacebookApiHandler m_FacebookApiHandler;
-        private User m_LoggedInUser;
 
         public FacebookForm()
         {
@@ -29,6 +29,7 @@ namespace C16_Ex01_FacebookAPI
         private void buttonLogin_Click(object sender, EventArgs e)
         {
             m_FacebookApiHandler = new FacebookApiHandler();
+
             m_FacebookApiHandler.UserLogin();
             if (string.IsNullOrEmpty(m_FacebookApiHandler.m_AccessToken))
             {
@@ -42,7 +43,6 @@ namespace C16_Ex01_FacebookAPI
             enableButtons();
             m_ButtonLogin.Hide();
             m_RememberMeCheckBox.Hide();
-
         }
 
         private void enableButtons()
@@ -53,13 +53,13 @@ namespace C16_Ex01_FacebookAPI
             }
         }
 
-
         private void fetchData()
         {
             loadPictures();
             loadEvents();
             loadPosts();
-            loadPictureStatistics();
+            Thread pictureStatThread = new Thread(loadPictureStatistics);
+            pictureStatThread.Start();
         }
 
         private void loadPictureStatistics()
@@ -68,31 +68,35 @@ namespace C16_Ex01_FacebookAPI
             string maxCommentUrl;
             string maxLikedUrl = maxCommentUrl = null; 
             int maxLiked = maxComment = 0;
-            List <Photo> userPhotos = m_FacebookApiHandler.GetUserPhotos();
+            List<Photo> userPhotos = m_FacebookApiHandler.GetUserPhotos();
+
             foreach (Photo photo in userPhotos)
             {
-
                 maxLikedUrl = newMax(ref maxLiked, photo.LikedBy.Count) ? photo.PictureNormalURL : maxLikedUrl;
                 maxCommentUrl = newMax(ref maxComment, photo.Comments.Count) ? photo.PictureNormalURL : maxCommentUrl;
             }
+
             if (maxLikedUrl != null)
             {
                 m_MostLikedPictureBox.LoadAsync(maxLikedUrl);
             }
+
             if (maxCommentUrl != null)
             {
                 m_MostCommentedPictureBox.LoadAsync(maxCommentUrl);
             }
         }
 
-        private bool newMax(ref int i_OldVal, int i_NewVal)
+        private bool newMax(ref int io_OldVal, int i_NewVal)
         {
             bool changed = false;
-            if (i_OldVal < i_NewVal)
+
+            if (io_OldVal < i_NewVal)
             {
-                i_OldVal = i_NewVal;
+                io_OldVal = i_NewVal;
                 changed = true;
             }
+
             return changed;
         }
 
@@ -106,9 +110,8 @@ namespace C16_Ex01_FacebookAPI
 
         private void loadEvents()
         {
-            LinkedList<EventControl> EventControls = new LinkedList<EventControl>();
-            //listBox1.Items.Clear();
-            //listBox1.DisplayMember = "Name";
+            LinkedList<EventControl> eventControls = new LinkedList<EventControl>();
+
             m_EventsLayout.Controls.Clear();
             foreach (Event fbEvent in m_FacebookApiHandler.m_User.Events)
             {
@@ -122,16 +125,15 @@ namespace C16_Ex01_FacebookAPI
                 {
                     control.EventLocation = "Unknown";
                 }
+
                 control.EventName = fbEvent.Name;
-                EventControls.AddLast(control);
+                eventControls.AddLast(control);
                 m_EventsLayout.Controls.Add(control);
             }
-
         }
 
         private void loadPosts()
         {
-
             m_PostsListBox.Items.Clear();
             m_PostsListBox.DisplayMember = "Description";
             foreach (Post post in m_FacebookApiHandler.m_User.Posts)
@@ -151,57 +153,44 @@ namespace C16_Ex01_FacebookAPI
             }
         }
 
-
-        private void eventPicture1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void postButton_Click(object sender, EventArgs e)
         {
-            m_LoggedInUser.PostStatus(m_PostTextBox.Text);
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            //int maxNumOfFriends = 0;
-            //User friendWithMostFriends;
-            //foreach (User friend in m_LoggedInUser.Friends)
-            //{
-            //    if (friend.)
-            //}
+            m_FacebookApiHandler.m_User.PostStatus(m_PostTextBox.Text);
         }
 
         private void songPostButton_Click(object sender, EventArgs e)
         {
-            //TODO: check if songURL is a valid url, and 
-            //TODO: check if textboxes contains something or disable until input 
+            m_LyricsErrorLabel.Visible = false;
             if (validateSongPostRequest())
             {
                 string result = m_FacebookApiHandler.GetSongLyrics(m_SongNameTextBox.Text, m_ArtistTextBox.Text);
+
                 if (!string.IsNullOrEmpty(result))
                 {
-                    m_FacebookApiHandler.m_User.PostStatus(i_StatusText: string.Format("{0} - {1}\n {2}", m_ArtistTextBox.Text, m_SongNameTextBox.Text, result), i_Link: m_SongUrl.Text);
+                    m_FacebookApiHandler.m_User.PostStatus(
+                        i_StatusText:
+                            string.Format("{0} - {1}\n {2}", m_ArtistTextBox.Text, m_SongNameTextBox.Text, result),
+                        i_Link: m_SongUrl.Text);
+                }
+                else
+                {
+                    m_LyricsErrorLabel.Visible = true;
                 }
             }
-
         }
 
         private bool validateSongPostRequest()
         {
             bool result = true;
+
             if (string.IsNullOrEmpty(m_ArtistTextBox.Text) || string.IsNullOrEmpty(m_SongUrl.Text) ||
                 string.IsNullOrEmpty(m_SongNameTextBox.Text))
             {
                 m_ArtistTextBox.BackColor = m_SongNameTextBox.BackColor = m_SongUrl.BackColor = Color.Red;
                 result = false;
             }
+
             return result;
-        }
-
-        private void songName_TextChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }

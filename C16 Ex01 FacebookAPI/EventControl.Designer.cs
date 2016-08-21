@@ -1,6 +1,6 @@
 ﻿namespace C16_Ex01_FacebookAPI
 {
-    partial class EventControl
+    public partial class EventControl
     {
         /// <summary> 
         /// Required designer variable.
@@ -17,6 +17,7 @@
             {
                 components.Dispose();
             }
+
             base.Dispose(disposing);
         }
 

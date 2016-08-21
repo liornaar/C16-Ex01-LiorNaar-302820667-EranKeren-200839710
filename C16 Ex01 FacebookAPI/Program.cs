@@ -6,17 +6,14 @@ using System.Windows.Forms;
 
 namespace C16_Ex01_FacebookAPI
 {
-    static class Program
+    public static class Program
     {
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
         [STAThread]
-        static void Main()
+        public static void Main()
         {
-            //LIOR TEST COMMIT
-            //LIOR BRANCH TEST
-            // Lior VS test
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new FacebookForm());
