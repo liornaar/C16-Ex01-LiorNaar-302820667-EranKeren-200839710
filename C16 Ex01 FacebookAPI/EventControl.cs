@@ -11,7 +11,7 @@ namespace C16_Ex01_FacebookAPI
 {
     public partial class EventControl : UserControl
     {
-        public string PictureUrl
+        public string m_PictureUrl
         {
             get { return eventPicture1.ImageLocation; }
             set
@@ -21,13 +21,13 @@ namespace C16_Ex01_FacebookAPI
             }
         }
 
-        public string EventLocation
+        public string m_EventLocation
         {
             get { return eventLocation1.Text; }
             set { eventLocation1.Text = value; }
         }
 
-        public string EventName
+        public string m_EventName
         {
             get { return labelName.Text; }
             set { labelName.Text = value; }

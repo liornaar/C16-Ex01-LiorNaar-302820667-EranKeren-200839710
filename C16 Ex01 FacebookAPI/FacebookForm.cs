@@ -116,17 +116,17 @@ namespace C16_Ex01_FacebookAPI
             foreach (Event fbEvent in m_FacebookApiHandler.m_User.Events)
             {
                 EventControl control = new EventControl();
-                control.PictureUrl = fbEvent.PictureNormalURL;
+                control.m_PictureUrl = fbEvent.PictureNormalURL;
                 if (fbEvent.Place != null)
                 {
-                    control.EventLocation = fbEvent.Place.Name;
+                    control.m_EventLocation = fbEvent.Place.Name;
                 }
                 else
                 {
-                    control.EventLocation = "Unknown";
+                    control.m_EventLocation = "Unknown";
                 }
 
-                control.EventName = fbEvent.Name;
+                control.m_EventName = fbEvent.Name;
                 eventControls.AddLast(control);
                 m_EventsLayout.Controls.Add(control);
             }
@@ -155,7 +155,10 @@ namespace C16_Ex01_FacebookAPI
 
         private void postButton_Click(object sender, EventArgs e)
         {
-            m_FacebookApiHandler.m_User.PostStatus(m_PostTextBox.Text);
+            if (!string.IsNullOrEmpty(m_PostTextBox.Text))
+            {
+                m_FacebookApiHandler.m_User.PostStatus(m_PostTextBox.Text);
+            }
         }
 
         private void songPostButton_Click(object sender, EventArgs e)

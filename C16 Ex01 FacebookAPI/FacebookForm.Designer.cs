@@ -44,6 +44,7 @@ namespace C16_Ex01_FacebookAPI
             this.m_PostsGroupBox = new System.Windows.Forms.GroupBox();
             this.m_PostsListBox = new System.Windows.Forms.ListBox();
             this.m_LyricsGroupBox = new System.Windows.Forms.GroupBox();
+            this.m_LyricsErrorLabel = new System.Windows.Forms.Label();
             this.m_SongPostButton = new System.Windows.Forms.Button();
             this.m_SongUrlLabel = new System.Windows.Forms.Label();
             this.m_SongTitleLabel = new System.Windows.Forms.Label();
@@ -57,7 +58,6 @@ namespace C16_Ex01_FacebookAPI
             this.m_MostCommentedPictureBox = new System.Windows.Forms.PictureBox();
             this.m_MostLikedPictureBox = new System.Windows.Forms.PictureBox();
             this.m_EventsLayout = new System.Windows.Forms.FlowLayoutPanel();
-            this.m_LyricsErrorLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.m_CoverPicture)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_ProfilePicture)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_EventLog)).BeginInit();
@@ -191,6 +191,17 @@ namespace C16_Ex01_FacebookAPI
             this.m_LyricsGroupBox.TabStop = false;
             this.m_LyricsGroupBox.Text = "Post Song + Lyrics!";
             // 
+            // m_LyricsErrorLabel
+            // 
+            this.m_LyricsErrorLabel.AutoSize = true;
+            this.m_LyricsErrorLabel.ForeColor = System.Drawing.Color.Red;
+            this.m_LyricsErrorLabel.Location = new System.Drawing.Point(44, 281);
+            this.m_LyricsErrorLabel.Name = "m_LyricsErrorLabel";
+            this.m_LyricsErrorLabel.Size = new System.Drawing.Size(171, 17);
+            this.m_LyricsErrorLabel.TabIndex = 29;
+            this.m_LyricsErrorLabel.Text = "Error: Could not find lyrics";
+            this.m_LyricsErrorLabel.Visible = false;
+            // 
             // m_SongPostButton
             // 
             this.m_SongPostButton.Enabled = false;
@@ -316,17 +327,6 @@ namespace C16_Ex01_FacebookAPI
             this.m_EventsLayout.Size = new System.Drawing.Size(848, 175);
             this.m_EventsLayout.TabIndex = 29;
             // 
-            // m_LyricsErrorLabel
-            // 
-            this.m_LyricsErrorLabel.AutoSize = true;
-            this.m_LyricsErrorLabel.ForeColor = System.Drawing.Color.Red;
-            this.m_LyricsErrorLabel.Location = new System.Drawing.Point(44, 281);
-            this.m_LyricsErrorLabel.Name = "m_LyricsErrorLabel";
-            this.m_LyricsErrorLabel.Size = new System.Drawing.Size(171, 17);
-            this.m_LyricsErrorLabel.TabIndex = 29;
-            this.m_LyricsErrorLabel.Text = "Error: Could not find lyrics";
-            this.m_LyricsErrorLabel.Visible = false;
-            // 
             // FacebookForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -344,6 +344,7 @@ namespace C16_Ex01_FacebookAPI
             this.Controls.Add(this.m_ProfilePicture);
             this.Controls.Add(this.m_ButtonLogin);
             this.Controls.Add(this.m_CoverPicture);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FacebookForm";
             this.Text = "dw";
