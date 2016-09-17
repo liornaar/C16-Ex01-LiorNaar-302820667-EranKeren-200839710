@@ -7,11 +7,11 @@ namespace C16_Ex01_FacebookAPI
 {
     static class InspirationalQuoteFactory
     {
-        public static InspirationalQuote GetQuoter(string type)
+        public static InspirationalQuote GetQuoter(string i_Type)
         {
             InspirationalQuote quoter = null;
 
-            switch (type)
+            switch (i_Type)
             {
                 case "motivational":
                     quoter = new MotivationalQuote();

@@ -76,6 +76,7 @@
       <DependentUpon>EventControl.cs</DependentUpon>
     </Compile>
     <Compile Include="FacebookApiHandler.cs" />
+    <Compile Include="FaceBookEventProxy.cs" />
     <Compile Include="FacebookForm.cs">
       <SubType>Form</SubType>
     </Compile>

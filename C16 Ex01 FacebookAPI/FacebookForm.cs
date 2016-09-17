@@ -123,17 +123,18 @@ namespace C16_Ex01_FacebookAPI
             foreach (Event fbEvent in m_FacebookApiHandler.m_User.Events)
             {
                 EventControl control = new EventControl();
-                control.m_PictureUrl = fbEvent.PictureNormalURL;
+                FaceBookEventProxy eventProxy = new FaceBookEventProxy(fbEvent);
+                control.m_PictureUrl = eventProxy.Picture;
                 if (fbEvent.Place != null)
                 {
-                    control.m_EventLocation = fbEvent.Place.Name;
+                    control.m_EventLocation = eventProxy.Location;
                 }
                 else
                 {
                     control.m_EventLocation = "Unknown";
                 }
 
-                control.m_EventName = fbEvent.Name;
+                control.m_EventName = eventProxy.Name;
                 eventControls.AddLast(control);
                 m_EventsLayout.Controls.Add(control);
             }
