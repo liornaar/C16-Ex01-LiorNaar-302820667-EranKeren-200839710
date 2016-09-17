@@ -90,7 +90,6 @@ namespace C16_Ex01_FacebookAPI
             {
                 m_MostCommentedPictureBox.LoadAsync(maxCommentUrl);
                 m_LoadingLabelComment.Invoke(new Action(() => m_LoadingLabelComment.Visible = false));
-
             }
         }
 
@@ -123,18 +122,17 @@ namespace C16_Ex01_FacebookAPI
             foreach (Event fbEvent in m_FacebookApiHandler.m_User.Events)
             {
                 EventControl control = new EventControl();
-                FaceBookEventProxy eventProxy = new FaceBookEventProxy(fbEvent);
-                control.m_PictureUrl = eventProxy.Picture;
+                control.m_PictureUrl = fbEvent.PictureNormalURL;
                 if (fbEvent.Place != null)
                 {
-                    control.m_EventLocation = eventProxy.Location;
+                    control.m_EventLocation = fbEvent.Place.Name;
                 }
                 else
                 {
                     control.m_EventLocation = "Unknown";
                 }
 
-                control.m_EventName = eventProxy.Name;
+                control.m_EventName = fbEvent.Name;
                 eventControls.AddLast(control);
                 m_EventsLayout.Controls.Add(control);
             }
@@ -142,23 +140,25 @@ namespace C16_Ex01_FacebookAPI
 
         private void loadPosts()
         {
-            m_PostsListBox.Items.Clear();
-            m_PostsListBox.DisplayMember = "Description";
-            foreach (Post post in m_FacebookApiHandler.m_User.Posts)
-            {
-                if (post.Message != null)
-                {
-                    m_PostsListBox.Items.Add(post.Message);
-                }
-                else if (post.Caption != null)
-                {
-                    m_PostsListBox.Items.Add(post.Caption);
-                }
-                else
-                {
-                    m_PostsListBox.Items.Add(string.Format("[{0}]", post.Type));
-                }
-            }
+            //m_PostsListBox.Items.Clear();
+            //m_PostsListBox.DisplayMember = "Description";
+            //foreach (Post post in m_FacebookApiHandler.m_User.Posts)
+            //{
+            //    if (post.Message != null)
+            //    {
+            //        m_PostsListBox.Items.Add(post.Message);
+            //    }
+            //    else if (post.Caption != null)
+            //    {
+            //        m_PostsListBox.Items.Add(post.Caption);
+            //    }
+            //    else
+            //    {
+            //        m_PostsListBox.Items.Add(string.Format("[{0}]", post.Type));
+            //    }
+            //}
+
+            postBindingSource.DataSource = m_FacebookApiHandler.m_User.Posts;
         }
 
         private void postButton_Click(object sender, EventArgs e)

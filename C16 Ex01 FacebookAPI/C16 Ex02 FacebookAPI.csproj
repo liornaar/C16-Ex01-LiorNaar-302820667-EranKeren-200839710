@@ -76,7 +76,6 @@
       <DependentUpon>EventControl.cs</DependentUpon>
     </Compile>
     <Compile Include="FacebookApiHandler.cs" />
-    <Compile Include="FaceBookEventProxy.cs" />
     <Compile Include="FacebookForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -113,6 +112,7 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include="ClassDiagram1.cd" />
+    <None Include="Properties\DataSources\FacebookWrapper.ObjectModel.Post.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -168,6 +168,7 @@
       <CachedSettingsPropName>C16_Ex02_FacebookAPI_com_wikia_lyrics_LyricWiki</CachedSettingsPropName>
     </WebReferenceUrl>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
