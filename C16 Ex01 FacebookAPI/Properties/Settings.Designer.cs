@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace C16_Ex01_FacebookAPI.Properties {
+namespace C16_Ex02_FacebookAPI.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
@@ -27,9 +27,9 @@ namespace C16_Ex01_FacebookAPI.Properties {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
         [global::System.Configuration.DefaultSettingValueAttribute("http://lyrics.wikia.com/server.php")]
-        public string C16_Ex01_FacebookAPI_com_wikia_lyrics_LyricWiki {
+        public string C16_Ex02_FacebookAPI_com_wikia_lyrics_LyricWiki {
             get {
-                return ((string)(this["C16_Ex01_FacebookAPI_com_wikia_lyrics_LyricWiki"]));
+                return ((string)(this["C16_Ex02_FacebookAPI_com_wikia_lyrics_LyricWiki"]));
             }
         }
     }

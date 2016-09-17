@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using C16_Ex02_FacebookAPI;
 using FacebookWrapper;
 using FacebookWrapper.ObjectModel;
 

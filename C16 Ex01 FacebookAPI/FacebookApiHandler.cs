@@ -2,15 +2,14 @@
 using System.Collections.Generic;
 using System.Text;
 using System.Windows.Forms;
-using C16_Ex01_FacebookAPI.Web_References.com.wikia.lyrics;
 using FacebookWrapper;
 using FacebookWrapper.ObjectModel;
 
-namespace C16_Ex01_FacebookAPI
+namespace C16_Ex02_FacebookAPI
 {
     internal class FacebookApiHandler
     {
-        private LyricWiki m_SongHandler;
+        private LyricsPoster m_SongHandler;
         public User m_User { get; set; }
         public string m_AccessToken { get; set; }
 
@@ -25,13 +24,9 @@ namespace C16_Ex01_FacebookAPI
         public string GetSongLyrics(string i_Title, string i_Artist)
         {
             string result = null;
-            m_SongHandler = m_SongHandler == null ? new LyricWiki() : m_SongHandler;
-            LyricsResult lyricsResult = m_SongHandler.getSongResult(i_Artist, i_Title);
-            if (!string.Equals("Not found", lyricsResult.lyrics))
-            {
-                Encoding iso8859 = Encoding.GetEncoding("ISO-8859-1");
-                result = Encoding.UTF8.GetString(iso8859.GetBytes(lyricsResult.lyrics));
-            }
+
+            m_SongHandler = LyricsPoster.Instance;
+            result = m_SongHandler.GetSongLyrics(i_Artist, i_Title);
 
             return result;
         }
