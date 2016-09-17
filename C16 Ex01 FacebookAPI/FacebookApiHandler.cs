@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using System.Windows.Forms;
-using C16_Ex01_FacebookAPI.com.wikia.lyrics;
+using C16_Ex01_FacebookAPI.Web_References.com.wikia.lyrics;
 using FacebookWrapper;
 using FacebookWrapper.ObjectModel;
 
@@ -10,7 +10,7 @@ namespace C16_Ex01_FacebookAPI
 {
     internal class FacebookApiHandler
     {
-        private LyricWiki m_SongHandler = new LyricWiki();
+        private LyricWiki m_SongHandler;
         public User m_User { get; set; }
         public string m_AccessToken { get; set; }
 
@@ -25,6 +25,7 @@ namespace C16_Ex01_FacebookAPI
         public string GetSongLyrics(string i_Title, string i_Artist)
         {
             string result = null;
+            m_SongHandler = m_SongHandler == null ? new LyricWiki() : m_SongHandler;
             LyricsResult lyricsResult = m_SongHandler.getSongResult(i_Artist, i_Title);
             if (!string.Equals("Not found", lyricsResult.lyrics))
             {

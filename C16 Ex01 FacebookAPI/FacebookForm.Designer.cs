@@ -58,6 +58,13 @@ namespace C16_Ex01_FacebookAPI
             this.m_MostCommentedPictureBox = new System.Windows.Forms.PictureBox();
             this.m_MostLikedPictureBox = new System.Windows.Forms.PictureBox();
             this.m_EventsLayout = new System.Windows.Forms.FlowLayoutPanel();
+            this.m_LoadingLabelLike = new System.Windows.Forms.Label();
+            this.m_LoadingLabelComment = new System.Windows.Forms.Label();
+            this.m_QuotesGroupBox = new System.Windows.Forms.GroupBox();
+            this.m_MotivationalRadio = new System.Windows.Forms.RadioButton();
+            this.m_PhilosophicalRadio = new System.Windows.Forms.RadioButton();
+            this.m_FunnyRadio = new System.Windows.Forms.RadioButton();
+            this.m_QuoteButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.m_CoverPicture)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_ProfilePicture)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_EventLog)).BeginInit();
@@ -66,6 +73,7 @@ namespace C16_Ex01_FacebookAPI
             this.m_PictureStatGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_MostCommentedPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_MostLikedPictureBox)).BeginInit();
+            this.m_QuotesGroupBox.SuspendLayout();
             this.SuspendLayout();
             // 
             // m_ButtonLogin
@@ -157,7 +165,7 @@ namespace C16_Ex01_FacebookAPI
             this.m_PostsGroupBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.m_PostsGroupBox.Name = "m_PostsGroupBox";
             this.m_PostsGroupBox.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.m_PostsGroupBox.Size = new System.Drawing.Size(230, 268);
+            this.m_PostsGroupBox.Size = new System.Drawing.Size(230, 165);
             this.m_PostsGroupBox.TabIndex = 26;
             this.m_PostsGroupBox.TabStop = false;
             this.m_PostsGroupBox.Text = "Posts";
@@ -169,7 +177,7 @@ namespace C16_Ex01_FacebookAPI
             this.m_PostsListBox.Location = new System.Drawing.Point(3, 21);
             this.m_PostsListBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.m_PostsListBox.Name = "m_PostsListBox";
-            this.m_PostsListBox.Size = new System.Drawing.Size(221, 244);
+            this.m_PostsListBox.Size = new System.Drawing.Size(221, 132);
             this.m_PostsListBox.TabIndex = 27;
             // 
             // m_LyricsGroupBox
@@ -267,6 +275,8 @@ namespace C16_Ex01_FacebookAPI
             // 
             // m_PictureStatGroupBox
             // 
+            this.m_PictureStatGroupBox.Controls.Add(this.m_LoadingLabelComment);
+            this.m_PictureStatGroupBox.Controls.Add(this.m_LoadingLabelLike);
             this.m_PictureStatGroupBox.Controls.Add(this.m_MostCommentedPictureLabel);
             this.m_PictureStatGroupBox.Controls.Add(this.m_MostLikedPictureLabel);
             this.m_PictureStatGroupBox.Controls.Add(this.m_MostCommentedPictureBox);
@@ -327,11 +337,90 @@ namespace C16_Ex01_FacebookAPI
             this.m_EventsLayout.Size = new System.Drawing.Size(848, 175);
             this.m_EventsLayout.TabIndex = 29;
             // 
+            // m_LoadingLabelLike
+            // 
+            this.m_LoadingLabelLike.AutoSize = true;
+            this.m_LoadingLabelLike.Location = new System.Drawing.Point(56, 115);
+            this.m_LoadingLabelLike.Name = "m_LoadingLabelLike";
+            this.m_LoadingLabelLike.Size = new System.Drawing.Size(71, 17);
+            this.m_LoadingLabelLike.TabIndex = 34;
+            this.m_LoadingLabelLike.Text = "Loading...";
+            this.m_LoadingLabelLike.Visible = false;
+            // 
+            // m_LoadingLabelComment
+            // 
+            this.m_LoadingLabelComment.AutoSize = true;
+            this.m_LoadingLabelComment.Location = new System.Drawing.Point(249, 115);
+            this.m_LoadingLabelComment.Name = "m_LoadingLabelComment";
+            this.m_LoadingLabelComment.Size = new System.Drawing.Size(71, 17);
+            this.m_LoadingLabelComment.TabIndex = 35;
+            this.m_LoadingLabelComment.Text = "Loading...";
+            this.m_LoadingLabelComment.Visible = false;
+            // 
+            // m_QuotesGroupBox
+            // 
+            this.m_QuotesGroupBox.Controls.Add(this.m_QuoteButton);
+            this.m_QuotesGroupBox.Controls.Add(this.m_FunnyRadio);
+            this.m_QuotesGroupBox.Controls.Add(this.m_PhilosophicalRadio);
+            this.m_QuotesGroupBox.Controls.Add(this.m_MotivationalRadio);
+            this.m_QuotesGroupBox.Location = new System.Drawing.Point(18, 419);
+            this.m_QuotesGroupBox.Name = "m_QuotesGroupBox";
+            this.m_QuotesGroupBox.Size = new System.Drawing.Size(218, 100);
+            this.m_QuotesGroupBox.TabIndex = 30;
+            this.m_QuotesGroupBox.TabStop = false;
+            this.m_QuotesGroupBox.Text = "Choose Your Qoute";
+            this.m_QuotesGroupBox.Enter += new System.EventHandler(this.groupBox1_Enter);
+            // 
+            // m_MotivationalRadio
+            // 
+            this.m_MotivationalRadio.AutoSize = true;
+            this.m_MotivationalRadio.Location = new System.Drawing.Point(7, 22);
+            this.m_MotivationalRadio.Name = "m_MotivationalRadio";
+            this.m_MotivationalRadio.Size = new System.Drawing.Size(104, 21);
+            this.m_MotivationalRadio.TabIndex = 0;
+            this.m_MotivationalRadio.TabStop = true;
+            this.m_MotivationalRadio.Text = "Motivational";
+            this.m_MotivationalRadio.UseVisualStyleBackColor = true;
+            // 
+            // m_PhilosophicalRadio
+            // 
+            this.m_PhilosophicalRadio.AutoSize = true;
+            this.m_PhilosophicalRadio.Location = new System.Drawing.Point(7, 52);
+            this.m_PhilosophicalRadio.Name = "m_PhilosophicalRadio";
+            this.m_PhilosophicalRadio.Size = new System.Drawing.Size(112, 21);
+            this.m_PhilosophicalRadio.TabIndex = 1;
+            this.m_PhilosophicalRadio.TabStop = true;
+            this.m_PhilosophicalRadio.Text = "Philosophical";
+            this.m_PhilosophicalRadio.UseVisualStyleBackColor = true;
+            // 
+            // m_FunnyRadio
+            // 
+            this.m_FunnyRadio.AutoSize = true;
+            this.m_FunnyRadio.Location = new System.Drawing.Point(6, 79);
+            this.m_FunnyRadio.Name = "m_FunnyRadio";
+            this.m_FunnyRadio.Size = new System.Drawing.Size(68, 21);
+            this.m_FunnyRadio.TabIndex = 2;
+            this.m_FunnyRadio.TabStop = true;
+            this.m_FunnyRadio.Text = "Funny";
+            this.m_FunnyRadio.UseVisualStyleBackColor = true;
+            // 
+            // m_QuoteButton
+            // 
+            this.m_QuoteButton.Enabled = false;
+            this.m_QuoteButton.Location = new System.Drawing.Point(135, 45);
+            this.m_QuoteButton.Name = "m_QuoteButton";
+            this.m_QuoteButton.Size = new System.Drawing.Size(77, 23);
+            this.m_QuoteButton.TabIndex = 3;
+            this.m_QuoteButton.Text = "Post";
+            this.m_QuoteButton.UseVisualStyleBackColor = true;
+            this.m_QuoteButton.Click += new System.EventHandler(this.m_QuoteButton_Click);
+            // 
             // FacebookForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(876, 722);
+            this.Controls.Add(this.m_QuotesGroupBox);
             this.Controls.Add(this.m_EventsLayout);
             this.Controls.Add(this.m_PictureStatGroupBox);
             this.Controls.Add(this.m_LyricsGroupBox);
@@ -358,6 +447,8 @@ namespace C16_Ex01_FacebookAPI
             this.m_PictureStatGroupBox.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_MostCommentedPictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_MostLikedPictureBox)).EndInit();
+            this.m_QuotesGroupBox.ResumeLayout(false);
+            this.m_QuotesGroupBox.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -391,5 +482,12 @@ namespace C16_Ex01_FacebookAPI
         private Label m_MostLikedPictureLabel;
         private PictureBox m_MostCommentedPictureBox;
         private Label m_LyricsErrorLabel;
+        private Label m_LoadingLabelComment;
+        private Label m_LoadingLabelLike;
+        private GroupBox m_QuotesGroupBox;
+        private RadioButton m_MotivationalRadio;
+        private Button m_QuoteButton;
+        private RadioButton m_FunnyRadio;
+        private RadioButton m_PhilosophicalRadio;
     }
 }

@@ -23,7 +23,7 @@ namespace C16_Ex01_FacebookAPI
             Color myColor = Color.FromArgb(120, Color.White);
             m_RememberMeCheckBox.BackColor = myColor;
             m_RememberMeCheckBox.Parent = m_CoverPicture;
-            m_ButtonsList = new List<Button> { m_PostButton, m_SongPostButton };
+            m_ButtonsList = new List<Button> { m_PostButton, m_SongPostButton, m_QuoteButton };
         }
 
         private void buttonLogin_Click(object sender, EventArgs e)
@@ -51,6 +51,9 @@ namespace C16_Ex01_FacebookAPI
             {
                 button.Enabled = true;
             }
+
+            m_LoadingLabelComment.Show();
+            m_LoadingLabelLike.Show();
         }
 
         private void fetchData()
@@ -79,11 +82,14 @@ namespace C16_Ex01_FacebookAPI
             if (maxLikedUrl != null)
             {
                 m_MostLikedPictureBox.LoadAsync(maxLikedUrl);
+                m_LoadingLabelLike.Invoke(new Action(() => m_LoadingLabelLike.Visible = false));
             }
 
             if (maxCommentUrl != null)
             {
                 m_MostCommentedPictureBox.LoadAsync(maxCommentUrl);
+                m_LoadingLabelComment.Invoke(new Action(() => m_LoadingLabelComment.Visible = false));
+
             }
         }
 
@@ -166,13 +172,13 @@ namespace C16_Ex01_FacebookAPI
             m_LyricsErrorLabel.Visible = false;
             if (validateSongPostRequest())
             {
-                string result = m_FacebookApiHandler.GetSongLyrics(m_SongNameTextBox.Text, m_ArtistTextBox.Text);
+                string resultLyrics = m_FacebookApiHandler.GetSongLyrics(m_SongNameTextBox.Text, m_ArtistTextBox.Text);
 
-                if (!string.IsNullOrEmpty(result))
+                if (!string.IsNullOrEmpty(resultLyrics))
                 {
                     m_FacebookApiHandler.m_User.PostStatus(
                         i_StatusText:
-                            string.Format("{0} - {1}\n {2}", m_ArtistTextBox.Text, m_SongNameTextBox.Text, result),
+                            string.Format("{0} - {1}\n {2}", m_ArtistTextBox.Text, m_SongNameTextBox.Text, resultLyrics),
                         i_Link: m_SongUrl.Text);
                 }
                 else
@@ -194,6 +200,34 @@ namespace C16_Ex01_FacebookAPI
             }
 
             return result;
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void m_QuoteButton_Click(object sender, EventArgs e)
+        {
+            string radioButtonString = getTextFromCheckedButton();
+            if (radioButtonString != null)
+            {
+                InspirationalQuote quotePoster = InspirationalQuoteFactory.GetQuoter(radioButtonString.ToLower());
+                string quote = quotePoster.getQoute();
+                m_FacebookApiHandler.m_User.PostStatus(quote);
+            }
+        }
+
+        private string getTextFromCheckedButton()
+        {
+            string buttonText = null;
+            RadioButton selectedButton = m_QuotesGroupBox.Controls.OfType<RadioButton>().FirstOrDefault(r => r.Checked);
+            if (selectedButton != null)
+            {
+                buttonText = selectedButton.Text;
+            }
+
+            return buttonText;
         }
     }
 }
