@@ -212,5 +212,11 @@ namespace C16_Ex01_FacebookAPI
 
             return buttonText;
         }
+
+        private void postBindingSource_CurrentChanged(object sender, EventArgs e)
+        {
+
+        }
+        
     }
 }

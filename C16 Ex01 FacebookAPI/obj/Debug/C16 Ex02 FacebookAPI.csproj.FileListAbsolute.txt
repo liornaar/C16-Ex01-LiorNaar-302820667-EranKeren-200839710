@@ -22,3 +22,13 @@ C:\Users\komoona\Documents\Visual Studio 2015\Projects\C16 Ex02 LiorNaar 3028206
 C:\Users\komoona\Documents\Visual Studio 2015\Projects\C16 Ex02 LiorNaar 302820667 EranKeren 200839710\C16 Ex01 FacebookAPI\obj\Debug\C16 Ex02 FacebookAPI.exe
 C:\Users\komoona\Documents\Visual Studio 2015\Projects\C16 Ex02 LiorNaar 302820667 EranKeren 200839710\C16 Ex01 FacebookAPI\obj\Debug\C16 Ex02 FacebookAPI.pdb
 C:\Users\komoona\Documents\Visual Studio 2015\Projects\C16 Ex02 LiorNaar 302820667 EranKeren 200839710\C16 Ex01 FacebookAPI\obj\Debug\C16 Ex02 FacebookAPI.csprojResolveAssemblyReference.cache
+C:\Users\Eran Keren\Documents\GitHub\C16-Ex01-LiorNaar-302820667-EranKeren-200839710\C16 Ex01 FacebookAPI\bin\Debug\C16 Ex02 FacebookAPI.exe.config
+C:\Users\Eran Keren\Documents\GitHub\C16-Ex01-LiorNaar-302820667-EranKeren-200839710\C16 Ex01 FacebookAPI\obj\Debug\C16 Ex02 FacebookAPI.exe
+C:\Users\Eran Keren\Documents\GitHub\C16-Ex01-LiorNaar-302820667-EranKeren-200839710\C16 Ex01 FacebookAPI\obj\Debug\C16 Ex02 FacebookAPI.pdb
+C:\Users\Eran Keren\Documents\GitHub\C16-Ex01-LiorNaar-302820667-EranKeren-200839710\C16 Ex01 FacebookAPI\bin\Debug\C16 Ex02 FacebookAPI.exe
+C:\Users\Eran Keren\Documents\GitHub\C16-Ex01-LiorNaar-302820667-EranKeren-200839710\C16 Ex01 FacebookAPI\bin\Debug\C16 Ex02 FacebookAPI.pdb
+C:\Users\Eran Keren\Documents\GitHub\C16-Ex01-LiorNaar-302820667-EranKeren-200839710\C16 Ex01 FacebookAPI\obj\Debug\C16 Ex02 FacebookAPI.csprojResolveAssemblyReference.cache
+C:\Users\Eran Keren\Documents\GitHub\C16-Ex01-LiorNaar-302820667-EranKeren-200839710\C16 Ex01 FacebookAPI\obj\Debug\C16_Ex01_FacebookAPI.EventControl.resources
+C:\Users\Eran Keren\Documents\GitHub\C16-Ex01-LiorNaar-302820667-EranKeren-200839710\C16 Ex01 FacebookAPI\obj\Debug\C16_Ex01_FacebookAPI.FacebookForm.resources
+C:\Users\Eran Keren\Documents\GitHub\C16-Ex01-LiorNaar-302820667-EranKeren-200839710\C16 Ex01 FacebookAPI\obj\Debug\C16_Ex02_FacebookAPI.Properties.Resources.resources
+C:\Users\Eran Keren\Documents\GitHub\C16-Ex01-LiorNaar-302820667-EranKeren-200839710\C16 Ex01 FacebookAPI\obj\Debug\C16 Ex02 FacebookAPI.csproj.GenerateResource.Cache
