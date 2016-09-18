@@ -10,6 +10,7 @@ namespace C16_Ex02_FacebookAPI
     internal class FacebookApiHandler
     {
         private LyricsPoster m_SongHandler;
+
         public User m_User { get; set; }
         public string m_AccessToken { get; set; }
 

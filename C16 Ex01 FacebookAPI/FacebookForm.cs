@@ -140,24 +140,6 @@ namespace C16_Ex01_FacebookAPI
 
         private void loadPosts()
         {
-            //m_PostsListBox.Items.Clear();
-            //m_PostsListBox.DisplayMember = "Description";
-            //foreach (Post post in m_FacebookApiHandler.m_User.Posts)
-            //{
-            //    if (post.Message != null)
-            //    {
-            //        m_PostsListBox.Items.Add(post.Message);
-            //    }
-            //    else if (post.Caption != null)
-            //    {
-            //        m_PostsListBox.Items.Add(post.Caption);
-            //    }
-            //    else
-            //    {
-            //        m_PostsListBox.Items.Add(string.Format("[{0}]", post.Type));
-            //    }
-            //}
-
             postBindingSource.DataSource = m_FacebookApiHandler.m_User.Posts;
         }
 
@@ -206,7 +188,6 @@ namespace C16_Ex01_FacebookAPI
 
         private void groupBox1_Enter(object sender, EventArgs e)
         {
-
         }
 
         private void m_QuoteButton_Click(object sender, EventArgs e)

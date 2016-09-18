@@ -47,6 +47,11 @@ namespace C16_Ex01_FacebookAPI
             this.m_EventsLabel = new System.Windows.Forms.Label();
             this.m_EventLog = new System.Diagnostics.EventLog();
             this.m_PostsGroupBox = new System.Windows.Forms.GroupBox();
+            this.captionLabel1 = new System.Windows.Forms.Label();
+            this.postBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.createdTimeTextBox = new System.Windows.Forms.TextBox();
+            this.descriptionTextBox = new System.Windows.Forms.TextBox();
+            this.messageRichTextBox = new System.Windows.Forms.RichTextBox();
             this.m_PostDescriptinLabel = new System.Windows.Forms.Label();
             this.m_PostsListBox = new System.Windows.Forms.ListBox();
             this.m_LyricsGroupBox = new System.Windows.Forms.GroupBox();
@@ -71,11 +76,6 @@ namespace C16_Ex01_FacebookAPI
             this.m_FunnyRadio = new System.Windows.Forms.RadioButton();
             this.m_PhilosophicalRadio = new System.Windows.Forms.RadioButton();
             this.m_MotivationalRadio = new System.Windows.Forms.RadioButton();
-            this.postBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.captionLabel1 = new System.Windows.Forms.Label();
-            this.createdTimeTextBox = new System.Windows.Forms.TextBox();
-            this.descriptionTextBox = new System.Windows.Forms.TextBox();
-            this.messageRichTextBox = new System.Windows.Forms.RichTextBox();
             this.postBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             captionLabel = new System.Windows.Forms.Label();
             createdTimeLabel = new System.Windows.Forms.Label();
@@ -85,14 +85,50 @@ namespace C16_Ex01_FacebookAPI
             ((System.ComponentModel.ISupportInitialize)(this.m_ProfilePicture)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_EventLog)).BeginInit();
             this.m_PostsGroupBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.postBindingSource)).BeginInit();
             this.m_LyricsGroupBox.SuspendLayout();
             this.m_PictureStatGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_MostCommentedPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_MostLikedPictureBox)).BeginInit();
             this.m_QuotesGroupBox.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.postBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.postBindingSource1)).BeginInit();
             this.SuspendLayout();
+            // 
+            // captionLabel
+            // 
+            captionLabel.AutoSize = true;
+            captionLabel.Location = new System.Drawing.Point(138, 45);
+            captionLabel.Name = "captionLabel";
+            captionLabel.Size = new System.Drawing.Size(60, 17);
+            captionLabel.TabIndex = 29;
+            captionLabel.Text = "Caption:";
+            // 
+            // createdTimeLabel
+            // 
+            createdTimeLabel.AutoSize = true;
+            createdTimeLabel.Location = new System.Drawing.Point(138, 74);
+            createdTimeLabel.Name = "createdTimeLabel";
+            createdTimeLabel.Size = new System.Drawing.Size(97, 17);
+            createdTimeLabel.TabIndex = 31;
+            createdTimeLabel.Text = "Created Time:";
+            // 
+            // descriptionLabel
+            // 
+            descriptionLabel.AutoSize = true;
+            descriptionLabel.Location = new System.Drawing.Point(138, 102);
+            descriptionLabel.Name = "descriptionLabel";
+            descriptionLabel.Size = new System.Drawing.Size(83, 17);
+            descriptionLabel.TabIndex = 33;
+            descriptionLabel.Text = "Description:";
+            // 
+            // messageLabel
+            // 
+            messageLabel.AutoSize = true;
+            messageLabel.Location = new System.Drawing.Point(138, 130);
+            messageLabel.Name = "messageLabel";
+            messageLabel.Size = new System.Drawing.Size(69, 17);
+            messageLabel.TabIndex = 35;
+            messageLabel.Text = "Message:";
             // 
             // m_ButtonLogin
             // 
@@ -197,6 +233,43 @@ namespace C16_Ex01_FacebookAPI
             this.m_PostsGroupBox.TabStop = false;
             this.m_PostsGroupBox.Text = "Posts";
             // 
+            // captionLabel1
+            // 
+            this.captionLabel1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.postBindingSource, "Caption", true));
+            this.captionLabel1.Location = new System.Drawing.Point(241, 45);
+            this.captionLabel1.Name = "captionLabel1";
+            this.captionLabel1.Size = new System.Drawing.Size(100, 23);
+            this.captionLabel1.TabIndex = 30;
+            // 
+            // postBindingSource
+            // 
+            this.postBindingSource.DataSource = typeof(FacebookWrapper.ObjectModel.Post);
+            // 
+            // createdTimeTextBox
+            // 
+            this.createdTimeTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.postBindingSource, "CreatedTime", true));
+            this.createdTimeTextBox.Location = new System.Drawing.Point(241, 71);
+            this.createdTimeTextBox.Name = "createdTimeTextBox";
+            this.createdTimeTextBox.Size = new System.Drawing.Size(100, 22);
+            this.createdTimeTextBox.TabIndex = 32;
+            // 
+            // descriptionTextBox
+            // 
+            this.descriptionTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.postBindingSource, "Description", true));
+            this.descriptionTextBox.Location = new System.Drawing.Point(241, 99);
+            this.descriptionTextBox.Name = "descriptionTextBox";
+            this.descriptionTextBox.Size = new System.Drawing.Size(100, 22);
+            this.descriptionTextBox.TabIndex = 34;
+            // 
+            // messageRichTextBox
+            // 
+            this.messageRichTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.postBindingSource, "Message", true));
+            this.messageRichTextBox.Location = new System.Drawing.Point(241, 127);
+            this.messageRichTextBox.Name = "messageRichTextBox";
+            this.messageRichTextBox.Size = new System.Drawing.Size(100, 96);
+            this.messageRichTextBox.TabIndex = 36;
+            this.messageRichTextBox.Text = "";
+            // 
             // m_PostDescriptinLabel
             // 
             this.m_PostDescriptinLabel.AutoSize = true;
@@ -209,7 +282,7 @@ namespace C16_Ex01_FacebookAPI
             // m_PostsListBox
             // 
             this.m_PostsListBox.DataSource = this.postBindingSource;
-            this.m_PostsListBox.DisplayMember = "Caption";
+            this.m_PostsListBox.DisplayMember = "Message";
             this.m_PostsListBox.FormattingEnabled = true;
             this.m_PostsListBox.ItemHeight = 16;
             this.m_PostsListBox.Location = new System.Drawing.Point(3, 21);
@@ -217,6 +290,7 @@ namespace C16_Ex01_FacebookAPI
             this.m_PostsListBox.Name = "m_PostsListBox";
             this.m_PostsListBox.Size = new System.Drawing.Size(129, 132);
             this.m_PostsListBox.TabIndex = 27;
+            this.m_PostsListBox.ValueMember = "Message";
             // 
             // m_LyricsGroupBox
             // 
@@ -453,79 +527,6 @@ namespace C16_Ex01_FacebookAPI
             this.m_MotivationalRadio.Text = "Motivational";
             this.m_MotivationalRadio.UseVisualStyleBackColor = true;
             // 
-            // postBindingSource
-            // 
-            this.postBindingSource.DataSource = typeof(FacebookWrapper.ObjectModel.Post);
-            // 
-            // captionLabel
-            // 
-            captionLabel.AutoSize = true;
-            captionLabel.Location = new System.Drawing.Point(138, 45);
-            captionLabel.Name = "captionLabel";
-            captionLabel.Size = new System.Drawing.Size(60, 17);
-            captionLabel.TabIndex = 29;
-            captionLabel.Text = "Caption:";
-            // 
-            // captionLabel1
-            // 
-            this.captionLabel1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.postBindingSource, "Caption", true));
-            this.captionLabel1.Location = new System.Drawing.Point(241, 45);
-            this.captionLabel1.Name = "captionLabel1";
-            this.captionLabel1.Size = new System.Drawing.Size(100, 23);
-            this.captionLabel1.TabIndex = 30;
-            // 
-            // createdTimeLabel
-            // 
-            createdTimeLabel.AutoSize = true;
-            createdTimeLabel.Location = new System.Drawing.Point(138, 74);
-            createdTimeLabel.Name = "createdTimeLabel";
-            createdTimeLabel.Size = new System.Drawing.Size(97, 17);
-            createdTimeLabel.TabIndex = 31;
-            createdTimeLabel.Text = "Created Time:";
-            // 
-            // createdTimeTextBox
-            // 
-            this.createdTimeTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.postBindingSource, "CreatedTime", true));
-            this.createdTimeTextBox.Location = new System.Drawing.Point(241, 71);
-            this.createdTimeTextBox.Name = "createdTimeTextBox";
-            this.createdTimeTextBox.Size = new System.Drawing.Size(100, 22);
-            this.createdTimeTextBox.TabIndex = 32;
-            // 
-            // descriptionLabel
-            // 
-            descriptionLabel.AutoSize = true;
-            descriptionLabel.Location = new System.Drawing.Point(138, 102);
-            descriptionLabel.Name = "descriptionLabel";
-            descriptionLabel.Size = new System.Drawing.Size(83, 17);
-            descriptionLabel.TabIndex = 33;
-            descriptionLabel.Text = "Description:";
-            // 
-            // descriptionTextBox
-            // 
-            this.descriptionTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.postBindingSource, "Description", true));
-            this.descriptionTextBox.Location = new System.Drawing.Point(241, 99);
-            this.descriptionTextBox.Name = "descriptionTextBox";
-            this.descriptionTextBox.Size = new System.Drawing.Size(100, 22);
-            this.descriptionTextBox.TabIndex = 34;
-            // 
-            // messageLabel
-            // 
-            messageLabel.AutoSize = true;
-            messageLabel.Location = new System.Drawing.Point(138, 130);
-            messageLabel.Name = "messageLabel";
-            messageLabel.Size = new System.Drawing.Size(69, 17);
-            messageLabel.TabIndex = 35;
-            messageLabel.Text = "Message:";
-            // 
-            // messageRichTextBox
-            // 
-            this.messageRichTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.postBindingSource, "Message", true));
-            this.messageRichTextBox.Location = new System.Drawing.Point(241, 127);
-            this.messageRichTextBox.Name = "messageRichTextBox";
-            this.messageRichTextBox.Size = new System.Drawing.Size(100, 96);
-            this.messageRichTextBox.TabIndex = 36;
-            this.messageRichTextBox.Text = "";
-            // 
             // postBindingSource1
             // 
             this.postBindingSource1.DataSource = typeof(FacebookWrapper.ObjectModel.Post);
@@ -557,6 +558,7 @@ namespace C16_Ex01_FacebookAPI
             ((System.ComponentModel.ISupportInitialize)(this.m_EventLog)).EndInit();
             this.m_PostsGroupBox.ResumeLayout(false);
             this.m_PostsGroupBox.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.postBindingSource)).EndInit();
             this.m_LyricsGroupBox.ResumeLayout(false);
             this.m_LyricsGroupBox.PerformLayout();
             this.m_PictureStatGroupBox.ResumeLayout(false);
@@ -565,7 +567,6 @@ namespace C16_Ex01_FacebookAPI
             ((System.ComponentModel.ISupportInitialize)(this.m_MostLikedPictureBox)).EndInit();
             this.m_QuotesGroupBox.ResumeLayout(false);
             this.m_QuotesGroupBox.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.postBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.postBindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

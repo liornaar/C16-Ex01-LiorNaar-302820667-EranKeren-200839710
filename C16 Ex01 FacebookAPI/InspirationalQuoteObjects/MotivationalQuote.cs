@@ -11,7 +11,7 @@ namespace C16_Ex01_FacebookAPI
         public override string getQoute()
         {
             string[] readText = File.ReadAllLines("..//..//motivational.txt");
-            return readText[rand.Next(0, readText.Length)];
+            return readText[Rand.Next(0, readText.Length)];
         }
     }
 }

@@ -5,7 +5,7 @@ using System.Text;
 
 namespace C16_Ex01_FacebookAPI
 {
-    static class InspirationalQuoteFactory
+    internal static class InspirationalQuoteFactory
     {
         public static InspirationalQuote GetQuoter(string i_Type)
         {

@@ -7,10 +7,8 @@ namespace C16_Ex01_FacebookAPI
 {
     internal abstract class InspirationalQuote
     {
-        public Random rand = new Random();
+        public Random Rand = new Random();
 
         public abstract string getQoute();
     }
-
-
 }
