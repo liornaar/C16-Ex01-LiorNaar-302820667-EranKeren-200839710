@@ -17,6 +17,7 @@ namespace C16_Ex01_FacebookAPI
     public partial class FacebookForm : Form
     {
         private FacebookApiHandler m_FacebookApiHandler;
+        private readonly ObservableMaxStatsGroupBox m_ObservableGroupBox = new ObservableMaxStatsGroupBox();
 
         public FacebookForm()
         {
@@ -52,9 +53,6 @@ namespace C16_Ex01_FacebookAPI
             {
                 button.Enabled = true;
             }
-
-            m_LoadingLabelComment.Show();
-            m_LoadingLabelLike.Show();
         }
 
         private void fetchData()
@@ -62,48 +60,18 @@ namespace C16_Ex01_FacebookAPI
             loadPictures();
             loadEvents();
             loadPosts();
+            ObserverLoadingLabel m_LoadingLabelComment = new ObserverLoadingLabel(m_LoadingPicBoxComment);
+            ObserverLoadingLabel m_LoadingLabelLike = new ObserverLoadingLabel(m_LoadingPicBoxLike);
+            m_ObservableGroupBox.Subscribe(m_LoadingLabelLike);
+            m_ObservableGroupBox.Subscribe(m_LoadingLabelComment);
             Thread pictureStatThread = new Thread(loadPictureStatistics);
             pictureStatThread.Start();
         }
 
         private void loadPictureStatistics()
         {
-            int maxComment;
-            string maxCommentUrl;
-            string maxLikedUrl = maxCommentUrl = null; 
-            int maxLiked = maxComment = 0;
             List<Photo> userPhotos = m_FacebookApiHandler.GetUserPhotos();
-
-            foreach (Photo photo in userPhotos)
-            {
-                maxLikedUrl = newMax(ref maxLiked, photo.LikedBy.Count) ? photo.PictureNormalURL : maxLikedUrl;
-                maxCommentUrl = newMax(ref maxComment, photo.Comments.Count) ? photo.PictureNormalURL : maxCommentUrl;
-            }
-
-            if (maxLikedUrl != null)
-            {
-                m_MostLikedPictureBox.LoadAsync(maxLikedUrl);
-                m_LoadingLabelLike.Invoke(new Action(() => m_LoadingLabelLike.Visible = false));
-            }
-
-            if (maxCommentUrl != null)
-            {
-                m_MostCommentedPictureBox.LoadAsync(maxCommentUrl);
-                m_LoadingLabelComment.Invoke(new Action(() => m_LoadingLabelComment.Visible = false));
-            }
-        }
-
-        private bool newMax(ref int io_OldVal, int i_NewVal)
-        {
-            bool changed = false;
-
-            if (io_OldVal < i_NewVal)
-            {
-                io_OldVal = i_NewVal;
-                changed = true;
-            }
-
-            return changed;
+            m_ObservableGroupBox.LoadUserPhotos(userPhotos, m_MostLikedPictureBox, m_MostCommentedPictureBox);
         }
 
         private void loadPictures()
@@ -212,11 +180,5 @@ namespace C16_Ex01_FacebookAPI
 
             return buttonText;
         }
-
-        private void postBindingSource_CurrentChanged(object sender, EventArgs e)
-        {
-
-        }
-        
     }
 }
