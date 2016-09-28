@@ -86,21 +86,17 @@ namespace C16_Ex01_FacebookAPI
         {
             LinkedList<EventControl> eventControls = new LinkedList<EventControl>();
 
-            m_EventsLayout.Controls.Clear();
-            foreach (Event fbEvent in m_FacebookApiHandler.m_User.Events)
-            {
-                EventControl control = new EventControl();
-                control.m_PictureUrl = fbEvent.PictureNormalURL;
-                if (fbEvent.Place != null)
-                {
-                    control.m_EventLocation = fbEvent.Place.Name;
-                }
-                else
-                {
-                    control.m_EventLocation = "Unknown";
-                }
+            FilteredFacebookEvent facebookEvents = new FilteredFacebookEvent(m_FacebookApiHandler.m_User.Events.ToList());
 
-                control.m_EventName = fbEvent.Name;
+            m_EventsLayout.Controls.Clear();
+            foreach (FacebookEvent facebookEvent in facebookEvents)
+            {
+                EventControl control = new EventControl
+                {
+                    m_PictureUrl = facebookEvent.PictureUrl,
+                    m_EventLocation = facebookEvent.Location,
+                    m_EventName = facebookEvent.Name
+                };
                 eventControls.AddLast(control);
                 m_EventsLayout.Controls.Add(control);
             }
