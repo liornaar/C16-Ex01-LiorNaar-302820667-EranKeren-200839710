@@ -69,6 +69,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FacebookEvent.cs" />
     <Compile Include="EventControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -82,6 +83,7 @@
     <Compile Include="FacebookForm.Designer.cs">
       <DependentUpon>FacebookForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="FilteredFacebookEvent.cs" />
     <Compile Include="InspirationalQuoteFactory.cs" />
     <Compile Include="InspirationalQuoteObjects\FunnyQuote.cs" />
     <Compile Include="InspirationalQuoteObjects\InspirationalQuote.cs" />

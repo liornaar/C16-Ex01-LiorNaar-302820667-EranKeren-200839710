@@ -17,7 +17,7 @@ namespace C16_Ex02_FacebookAPI
         {
             m_Picturebox = i_Picture;
             m_Hidden = false;
-            m_Picturebox.Image = Image.FromFile("hourglass.gif");
+            m_Picturebox.Image = Image.FromFile("default.gif");
         }
 
         public void OnNext(PictureBox value)
