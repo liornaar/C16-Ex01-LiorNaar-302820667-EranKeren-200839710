@@ -64,6 +64,8 @@ namespace C16_Ex01_FacebookAPI
             this.m_SongNameTextBox = new System.Windows.Forms.TextBox();
             this.m_ArtistTextBox = new System.Windows.Forms.TextBox();
             this.m_PictureStatGroupBox = new System.Windows.Forms.GroupBox();
+            this.m_LoadingPicBoxComment = new System.Windows.Forms.PictureBox();
+            this.m_LoadingPicBoxLike = new System.Windows.Forms.PictureBox();
             this.m_MostCommentedPictureLabel = new System.Windows.Forms.Label();
             this.m_MostLikedPictureLabel = new System.Windows.Forms.Label();
             this.m_MostCommentedPictureBox = new System.Windows.Forms.PictureBox();
@@ -74,8 +76,8 @@ namespace C16_Ex01_FacebookAPI
             this.m_FunnyRadio = new System.Windows.Forms.RadioButton();
             this.m_PhilosophicalRadio = new System.Windows.Forms.RadioButton();
             this.m_MotivationalRadio = new System.Windows.Forms.RadioButton();
-            this.m_LoadingPicBoxLike = new System.Windows.Forms.PictureBox();
-            this.m_LoadingPicBoxComment = new System.Windows.Forms.PictureBox();
+            this.loveSignCheckBox = new System.Windows.Forms.CheckBox();
+            this.smileySignCheckBox = new System.Windows.Forms.CheckBox();
             captionLabel = new System.Windows.Forms.Label();
             createdTimeLabel = new System.Windows.Forms.Label();
             descriptionLabel = new System.Windows.Forms.Label();
@@ -87,11 +89,11 @@ namespace C16_Ex01_FacebookAPI
             ((System.ComponentModel.ISupportInitialize)(this.postBindingSource)).BeginInit();
             this.m_LyricsGroupBox.SuspendLayout();
             this.m_PictureStatGroupBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.m_LoadingPicBoxComment)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.m_LoadingPicBoxLike)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_MostCommentedPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_MostLikedPictureBox)).BeginInit();
             this.m_QuotesGroupBox.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.m_LoadingPicBoxLike)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.m_LoadingPicBoxComment)).BeginInit();
             this.SuspendLayout();
             // 
             // captionLabel
@@ -402,6 +404,22 @@ namespace C16_Ex01_FacebookAPI
             this.m_PictureStatGroupBox.TabStop = false;
             this.m_PictureStatGroupBox.Text = "Picture Statistics";
             // 
+            // m_LoadingPicBoxComment
+            // 
+            this.m_LoadingPicBoxComment.Location = new System.Drawing.Point(176, 82);
+            this.m_LoadingPicBoxComment.Name = "m_LoadingPicBoxComment";
+            this.m_LoadingPicBoxComment.Size = new System.Drawing.Size(90, 65);
+            this.m_LoadingPicBoxComment.TabIndex = 35;
+            this.m_LoadingPicBoxComment.TabStop = false;
+            // 
+            // m_LoadingPicBoxLike
+            // 
+            this.m_LoadingPicBoxLike.Location = new System.Drawing.Point(41, 82);
+            this.m_LoadingPicBoxLike.Name = "m_LoadingPicBoxLike";
+            this.m_LoadingPicBoxLike.Size = new System.Drawing.Size(90, 65);
+            this.m_LoadingPicBoxLike.TabIndex = 34;
+            this.m_LoadingPicBoxLike.TabStop = false;
+            // 
             // m_MostCommentedPictureLabel
             // 
             this.m_MostCommentedPictureLabel.AutoSize = true;
@@ -451,13 +469,15 @@ namespace C16_Ex01_FacebookAPI
             // 
             // m_QuotesGroupBox
             // 
+            this.m_QuotesGroupBox.Controls.Add(this.smileySignCheckBox);
+            this.m_QuotesGroupBox.Controls.Add(this.loveSignCheckBox);
             this.m_QuotesGroupBox.Controls.Add(this.m_QuoteButton);
             this.m_QuotesGroupBox.Controls.Add(this.m_FunnyRadio);
             this.m_QuotesGroupBox.Controls.Add(this.m_PhilosophicalRadio);
             this.m_QuotesGroupBox.Controls.Add(this.m_MotivationalRadio);
             this.m_QuotesGroupBox.Location = new System.Drawing.Point(18, 419);
             this.m_QuotesGroupBox.Name = "m_QuotesGroupBox";
-            this.m_QuotesGroupBox.Size = new System.Drawing.Size(218, 100);
+            this.m_QuotesGroupBox.Size = new System.Drawing.Size(229, 119);
             this.m_QuotesGroupBox.TabIndex = 30;
             this.m_QuotesGroupBox.TabStop = false;
             this.m_QuotesGroupBox.Text = "Choose Your Quote";
@@ -466,7 +486,7 @@ namespace C16_Ex01_FacebookAPI
             // m_QuoteButton
             // 
             this.m_QuoteButton.Enabled = false;
-            this.m_QuoteButton.Location = new System.Drawing.Point(135, 45);
+            this.m_QuoteButton.Location = new System.Drawing.Point(135, 90);
             this.m_QuoteButton.Name = "m_QuoteButton";
             this.m_QuoteButton.Size = new System.Drawing.Size(77, 23);
             this.m_QuoteButton.TabIndex = 3;
@@ -507,21 +527,25 @@ namespace C16_Ex01_FacebookAPI
             this.m_MotivationalRadio.Text = "Motivational";
             this.m_MotivationalRadio.UseVisualStyleBackColor = true;
             // 
-            // m_LoadingPicBoxLike
+            // loveSignCheckBox
             // 
-            this.m_LoadingPicBoxLike.Location = new System.Drawing.Point(41, 82);
-            this.m_LoadingPicBoxLike.Name = "m_LoadingPicBoxLike";
-            this.m_LoadingPicBoxLike.Size = new System.Drawing.Size(90, 65);
-            this.m_LoadingPicBoxLike.TabIndex = 34;
-            this.m_LoadingPicBoxLike.TabStop = false;
+            this.loveSignCheckBox.AutoSize = true;
+            this.loveSignCheckBox.Location = new System.Drawing.Point(132, 26);
+            this.loveSignCheckBox.Name = "loveSignCheckBox";
+            this.loveSignCheckBox.Size = new System.Drawing.Size(75, 21);
+            this.loveSignCheckBox.TabIndex = 4;
+            this.loveSignCheckBox.Text = "Add <3";
+            this.loveSignCheckBox.UseVisualStyleBackColor = true;
             // 
-            // m_LoadingPicBoxComment
+            // smileySignCheckBox
             // 
-            this.m_LoadingPicBoxComment.Location = new System.Drawing.Point(176, 82);
-            this.m_LoadingPicBoxComment.Name = "m_LoadingPicBoxComment";
-            this.m_LoadingPicBoxComment.Size = new System.Drawing.Size(90, 65);
-            this.m_LoadingPicBoxComment.TabIndex = 35;
-            this.m_LoadingPicBoxComment.TabStop = false;
+            this.smileySignCheckBox.AutoSize = true;
+            this.smileySignCheckBox.Location = new System.Drawing.Point(132, 53);
+            this.smileySignCheckBox.Name = "smileySignCheckBox";
+            this.smileySignCheckBox.Size = new System.Drawing.Size(68, 21);
+            this.smileySignCheckBox.TabIndex = 5;
+            this.smileySignCheckBox.Text = "Add :)";
+            this.smileySignCheckBox.UseVisualStyleBackColor = true;
             // 
             // FacebookForm
             // 
@@ -556,12 +580,12 @@ namespace C16_Ex01_FacebookAPI
             this.m_LyricsGroupBox.PerformLayout();
             this.m_PictureStatGroupBox.ResumeLayout(false);
             this.m_PictureStatGroupBox.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.m_LoadingPicBoxComment)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.m_LoadingPicBoxLike)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_MostCommentedPictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_MostLikedPictureBox)).EndInit();
             this.m_QuotesGroupBox.ResumeLayout(false);
             this.m_QuotesGroupBox.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.m_LoadingPicBoxLike)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.m_LoadingPicBoxComment)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -608,5 +632,7 @@ namespace C16_Ex01_FacebookAPI
         private RichTextBox messageRichTextBox;
         private PictureBox m_LoadingPicBoxComment;
         private PictureBox m_LoadingPicBoxLike;
+        private CheckBox smileySignCheckBox;
+        private CheckBox loveSignCheckBox;
     }
 }

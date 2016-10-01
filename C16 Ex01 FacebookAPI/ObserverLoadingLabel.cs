@@ -7,13 +7,13 @@ using System.Windows.Forms;
 
 namespace C16_Ex02_FacebookAPI
 {
-    public class ObserverLoadingLabel : IObserver<PictureBox>
+    public class ObserverLoadingPicture : IObserver<PictureBox>
     {
         public PictureBox m_Picturebox { get; set; }
         public bool m_Hidden { get; set; }
         public Image m_LoadingImage { get; set; }
 
-        public ObserverLoadingLabel(PictureBox i_Picture)
+        public ObserverLoadingPicture(PictureBox i_Picture)
         {
             m_Picturebox = i_Picture;
             m_Hidden = false;

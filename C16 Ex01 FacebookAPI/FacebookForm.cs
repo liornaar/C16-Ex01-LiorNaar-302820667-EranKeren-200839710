@@ -60,8 +60,8 @@ namespace C16_Ex01_FacebookAPI
             loadPictures();
             loadEvents();
             loadPosts();
-            ObserverLoadingLabel m_LoadingLabelComment = new ObserverLoadingLabel(m_LoadingPicBoxComment);
-            ObserverLoadingLabel m_LoadingLabelLike = new ObserverLoadingLabel(m_LoadingPicBoxLike);
+            ObserverLoadingPicture m_LoadingLabelComment = new ObserverLoadingPicture(m_LoadingPicBoxComment);
+            ObserverLoadingPicture m_LoadingLabelLike = new ObserverLoadingPicture(m_LoadingPicBoxLike);
             m_ObservableGroupBox.Subscribe(m_LoadingLabelLike);
             m_ObservableGroupBox.Subscribe(m_LoadingLabelComment);
             Thread pictureStatThread = new Thread(loadPictureStatistics);
@@ -160,7 +160,24 @@ namespace C16_Ex01_FacebookAPI
             if (radioButtonString != null)
             {
                 InspirationalQuote quotePoster = InspirationalQuoteFactory.GetQuoter(radioButtonString.ToLower());
-                string quote = quotePoster.getQoute();
+                string quote;
+                if (smileySignCheckBox.Checked && loveSignCheckBox.Checked)
+                {
+                    quote = new QuoteLoveDecorator(
+                        new QuoteSmileyDecorator(quotePoster)).getQoute();
+                } 
+                else if (smileySignCheckBox.Checked)
+                {
+                    quote = new QuoteSmileyDecorator(quotePoster).getQoute();
+                }
+                else if (loveSignCheckBox.Checked)
+                {
+                    quote = new QuoteLoveDecorator(quotePoster).getQoute();
+                }
+                else
+                {
+                    quote = quotePoster.getQoute();
+                }
                 m_FacebookApiHandler.m_User.PostStatus(quote);
             }
         }
