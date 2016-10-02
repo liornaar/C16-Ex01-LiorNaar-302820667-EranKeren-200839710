@@ -15,6 +15,7 @@ namespace C16_Ex02_FacebookAPI
         {
             m_Facebookevents = i_Events;
         }
+
         public IEnumerator<FacebookEvent> GetEnumerator()
         {
             foreach (Event mFacebookevent in m_Facebookevents.Where(x => x.Place != null && x.AttendingUsers.Count > 10))

@@ -16,7 +16,7 @@ namespace C16_Ex02_FacebookAPI
 
         public override string getQoute()
         {
-            return base.getQoute() + " :)";
+            return string.Format("{0} {1}", base.m_Quoter.getQoute(), ":)");
         }
     }
 }
